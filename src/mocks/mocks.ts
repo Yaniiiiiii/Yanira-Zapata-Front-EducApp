@@ -50,6 +50,14 @@ export const mockUsers = [
         favorites: [mockResource],
     },
 ];
+
+export const mockUser = {
+    id: '1',
+    name: 'Ana',
+    email: 'ana@gmail.com',
+    favorites: [mockResource],
+};
+
 export const userWithoutResource = [
     {
         id: '1',
