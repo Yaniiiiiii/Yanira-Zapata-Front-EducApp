@@ -55,6 +55,7 @@ export class ResourceRepository implements ResourcesRepo<Resource> {
             body: JSON.stringify(resource),
             headers: {
                 'content-type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         })
             .then((response) => {
@@ -69,6 +70,10 @@ export class ResourceRepository implements ResourcesRepo<Resource> {
     delete(id: string): Promise<void> {
         return fetch(`${this.url}/${id}`, {
             method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+            },
         })
             .then((response) => {
                 if (!response.ok) throw this.createError(response);
@@ -82,6 +87,7 @@ export class ResourceRepository implements ResourcesRepo<Resource> {
             body: JSON.stringify(resource),
             headers: {
                 'content-type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         })
             .then((response) => {
