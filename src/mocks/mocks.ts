@@ -55,7 +55,12 @@ export const mockUser = {
     id: '1',
     name: 'Ana',
     email: 'ana@gmail.com',
+    role: 'Teacher',
+    school: 'Peete',
+    grade: 'first',
     favorites: [mockResource],
+    password: 'string',
+    resources: [],
 };
 
 export const userWithoutResource = [
