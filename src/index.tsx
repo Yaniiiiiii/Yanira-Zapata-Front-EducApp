@@ -4,8 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { Provider } from 'react-redux';
 import { appStore } from './store/store';
-import ResourcesPage from './infrastructure/components/resourcesPage';
-import { ResourcesList } from './infrastructure/components/resourcesList';
+import { ResourcesList } from './infrastructure/components/prueba';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
