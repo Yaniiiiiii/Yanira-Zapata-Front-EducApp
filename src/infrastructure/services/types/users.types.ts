@@ -1,3 +1,5 @@
+import { Resource } from './resources.types';
+
 export type ProtoUser = {
     name?: string;
     email?: string;
@@ -5,9 +7,9 @@ export type ProtoUser = {
     role?: string;
     school?: string;
     grade?: string;
-    resources?: Array<string>;
-    favorites?: Array<string>;
-    carts?: Array<string>;
+    resources?: Array<Resource>;
+    favorites?: Array<Resource>;
+    carts?: Array<Resource>;
 };
 
 export type User = {
@@ -17,9 +19,9 @@ export type User = {
     role: string;
     school: string;
     grade: string;
-    resources: Array<string>;
-    favorites: Array<string>;
-    carts?: Array<string>;
+    resources: Array<Resource>;
+    favorites: Array<Resource>;
+    carts?: Array<Resource>;
     id: string;
 };
 

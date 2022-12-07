@@ -10,12 +10,12 @@ describe('Given the function usersReducer', () => {
     describe('When the action is load', () => {
         beforeEach(() => {
             action = {
-                type: actionTypesUsers.load,
+                type: actionTypesUsers.logging,
                 payload: [mockUser],
             };
             state = [];
         });
-        test('Then the returned state should be the action payload', () => {
+        test.only('Then the returned state should be the action payload', () => {
             const result = usersReducer(state, action);
             expect(result).toEqual(action.payload);
         });
@@ -23,7 +23,7 @@ describe('Given the function usersReducer', () => {
     describe('When the action is add', () => {
         beforeEach(() => {
             action = {
-                type: actionTypesUsers.add,
+                type: actionTypesUsers.login,
                 payload: mockUser,
             };
             state = [];

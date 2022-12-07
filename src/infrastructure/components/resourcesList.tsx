@@ -9,13 +9,11 @@ export function ResourcesList() {
         <section>
             <p>{resources[0].title}</p>
             <h2>{title}</h2>
-            {/* <ul className="resourcesList">{
-                resources.map((item: Resource)=>(
-                    <ResouceItem key ={item.id} item={item}></ResouceItem>
-                ))
-            }
-
-            </ul> */}
+            <ul className="resourcesList">
+                {resources.map((item: Resource) => (
+                    <ResouceItem key={item.id} item={item}></ResouceItem>
+                ))}
+            </ul>
         </section>
     ) : (
         <div>Tal</div>

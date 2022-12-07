@@ -2,26 +2,39 @@ import { createReducer } from '@reduxjs/toolkit';
 import { User } from '../services/types/users.types';
 import * as ac from './actionCreator';
 
-const initialState: Array<User> = [];
+export const initialState: {
+    isLogged: boolean;
+    isLogging: boolean;
+    user: User | null;
+    token: string;
+} = { isLogged: false, isLogging: false, token: '', user: null };
 
 export const usersReducer = createReducer(initialState, (builder) => {
-    builder.addCase(
-        ac.loadActionCreatorUsers,
-        (_state, action) => action.payload
-    );
-
-    builder.addCase(ac.addActionCreatorUsers, (state, action) => [
+    builder.addCase(ac.loggingActionCreatorUsers, (state, action) => ({
         ...state,
-        action.payload,
-    ]);
+        isLogging: true,
+    }));
 
-    builder.addCase(ac.deleteActionCreatorUsers, (state, action) => {
-        state.filter((user) => user.id !== action.payload);
-    });
-    builder.addCase(ac.updateActionCreatorUsers, (state, action) => {
-        state.map((user) =>
-            user.id !== action.payload.id ? action.payload : user
-        );
-    });
+    builder.addCase(ac.loginActionCreatorUsers, (state, action) => ({
+        ...state,
+        isLogged: true,
+        token: action.payload,
+    }));
+
+    builder.addCase(ac.logoutActionCreatorUsers, (state, action) => ({
+        ...state,
+    }));
+
+    builder.addCase(ac.addFavoritesActionCreatorUsers, (state, action) => ({
+        ...state,
+        isLogged: true,
+        user: action.payload,
+    }));
+
+    builder.addCase(ac.deleteFavoritesActionCreatorUsers, (state, action) => ({
+        ...state,
+        isLogged: true,
+        user: action.payload,
+    }));
     builder.addDefaultCase((state) => state);
 });
