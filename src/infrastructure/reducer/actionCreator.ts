@@ -16,13 +16,18 @@ export const updateActionCreatorResource = createAction<Resource>(
     actionTypesResources.update
 );
 
-export const loadActionCreatorUsers = createAction<Array<User>>(
-    actionTypesUsers.load
+export const loggingActionCreatorUsers = createAction<void>(
+    actionTypesUsers.logging
 );
-export const addActionCreatorUsers = createAction<User>(actionTypesUsers.add);
-export const deleteActionCreatorUsers = createAction<User['id']>(
-    actionTypesUsers.delete
+export const loginActionCreatorUsers = createAction<string>(
+    actionTypesUsers.login
 );
-export const updateActionCreatorUsers = createAction<User>(
-    actionTypesUsers.update
+export const logoutActionCreatorUsers = createAction<void>(
+    actionTypesUsers.logout
+);
+export const deleteFavoritesActionCreatorUsers = createAction<User>(
+    actionTypesUsers.deleteFavorites
+);
+export const addFavoritesActionCreatorUsers = createAction<User>(
+    actionTypesUsers.addFavorites
 );

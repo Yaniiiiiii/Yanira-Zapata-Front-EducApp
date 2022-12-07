@@ -1,3 +1,5 @@
+import { User } from './users.types';
+
 export type ProtoResource = {
     title?: string;
     subject?: Subject;
@@ -6,7 +8,7 @@ export type ProtoResource = {
     pages?: string;
     price?: number;
     format?: string;
-    owner?: string;
+    owner?: User;
 };
 
 export type Resource = {
@@ -17,7 +19,7 @@ export type Resource = {
     pages: string;
     price?: number;
     format: string;
-    owner: string;
+    owner: User;
     id: string;
 };
 

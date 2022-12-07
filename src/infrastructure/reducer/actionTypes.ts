@@ -6,8 +6,9 @@ export const actionTypesResources = {
 };
 
 export const actionTypesUsers = {
-    load: 'users@load',
-    add: 'users@add',
-    delete: 'users@delete',
-    update: 'users@update',
+    logging: 'users@logging',
+    login: 'users@login',
+    logout: 'users@logout',
+    deleteFavorites: 'users@deletefavorites',
+    addFavorites: 'users@addfavorites',
 };
