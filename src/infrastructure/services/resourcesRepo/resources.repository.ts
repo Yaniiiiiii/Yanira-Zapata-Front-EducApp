@@ -5,7 +5,7 @@ export class ResourceRepository implements ResourcesRepo<Resource> {
     url: string;
 
     constructor(url = 'http://localhost:7700/resources') {
-        this.url = url ? url : (process.env.REACT_APP_URL_PRODUCT as string);
+        this.url = url; //? url : (process.env.REACT_APP_URL_PRODUCT as string); los tests indican que no pasa por esta línea.
     }
 
     createError(response: Response) {

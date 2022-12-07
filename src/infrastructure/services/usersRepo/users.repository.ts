@@ -5,7 +5,7 @@ export class UsersRepository {
     url: string;
 
     constructor(url = 'http://localhost:7700/resources') {
-        this.url = url ? url : (process.env.REACT_APP_URL_PRODUCT as string);
+        this.url = url;
     }
 
     createError(response: Response) {

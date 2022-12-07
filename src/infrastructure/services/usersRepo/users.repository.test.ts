@@ -71,11 +71,6 @@ describe('Given the resource repository Service', () => {
                 statusText: 'error',
             });
         });
-        test.skip('Then it should first return the service as "test"', async () => {
-            const result = service.deleteUser;
-            expect(result).toBe({});
-        });
-
         test(`Then if there is a register error`, async () => {
             const expectedResult = await service.register({});
             const error = new Error('Error 400: error');
