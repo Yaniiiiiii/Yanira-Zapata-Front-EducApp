@@ -73,7 +73,6 @@ describe('Given the custom hook use component', () => {
         expect(ResourceRepository.prototype.getAll).toHaveBeenCalled();
     });
     test('then if the hook call handleAdd, it call the repository to add a new album and dispatch an action to add the album to the state', async () => {
-        //expect(current.handleAdd).toEqual([]);
         current.handleAdd(mockResource);
         expect(ResourceRepository.prototype.create).toHaveBeenCalled();
     });
