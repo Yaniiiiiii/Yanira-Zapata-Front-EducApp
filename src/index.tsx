@@ -4,16 +4,20 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { Provider } from 'react-redux';
 import { appStore } from './store/store';
-import { ResourcesList } from './infrastructure/components/prueba';
+import { UserLogin } from './infrastructure/components/userLogin';
+import { BrowserRouter } from 'react-router-dom';
+import { App } from './infrastructure/components/App/app';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <Provider store={appStore}>
-            <ResourcesList></ResourcesList>
-        </Provider>
+        <BrowserRouter>
+            <Provider store={appStore}>
+                <UserLogin></UserLogin>
+            </Provider>
+        </BrowserRouter>
     </React.StrictMode>
 );
 

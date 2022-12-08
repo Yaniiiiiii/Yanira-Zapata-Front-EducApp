@@ -7,7 +7,6 @@ import { Resource } from '../services/types/resources.types';
 
 export const useResources = () => {
     const resources = useAppSelector((state) => state.resources);
-
     const dispatcher = useDispatch();
     const apiResource = useMemo(() => new ResourceRepository(), []);
 

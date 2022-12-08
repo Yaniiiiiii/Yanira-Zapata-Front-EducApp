@@ -4,7 +4,7 @@ import { User } from '../types/users.types';
 export class UsersRepository {
     url: string;
 
-    constructor(url = 'http://localhost:7700/resources') {
+    constructor(url = 'http://localhost:7700/users') {
         this.url = url;
     }
 

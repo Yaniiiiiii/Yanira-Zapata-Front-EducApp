@@ -18,10 +18,37 @@ export const mockResources = [
     },
 ];
 
+export const mockUsers = [
+    {
+        id: '1',
+        name: 'Ana',
+        email: 'ana@gmail.com',
+        favorites: [mockResources[0]],
+    },
+    {
+        id: '2',
+        name: 'Julia',
+        email: 'julia@gmail.com',
+        favorites: [mockResources[0]],
+    },
+];
+
 export const mockProtoResource: ProtoResource = {
     title: 'puzzle',
     subject: 'reading',
     grade: 'first',
+};
+
+export const mockUser = {
+    id: '1',
+    name: 'Ana',
+    email: 'ana@gmail.com',
+    role: 'Teacher',
+    school: 'Peete',
+    grade: 'first',
+    favorites: mockResources[0],
+    password: 'string',
+    resources: [],
 };
 
 export const mockResource: Resource = {
@@ -32,35 +59,8 @@ export const mockResource: Resource = {
     pages: '3',
     price: 5,
     format: 'pdf',
-    owner: 'Julia',
+    owner: mockUser.resources[0],
     id: '3',
-};
-
-export const mockUsers = [
-    {
-        id: '1',
-        name: 'Ana',
-        email: 'ana@gmail.com',
-        favorites: [mockResource],
-    },
-    {
-        id: '2',
-        name: 'Julia',
-        email: 'julia@gmail.com',
-        favorites: [mockResource],
-    },
-];
-
-export const mockUser = {
-    id: '1',
-    name: 'Ana',
-    email: 'ana@gmail.com',
-    role: 'Teacher',
-    school: 'Peete',
-    grade: 'first',
-    favorites: [mockResource],
-    password: 'string',
-    resources: [],
 };
 
 export const userWithoutResource = [
