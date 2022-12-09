@@ -6,12 +6,12 @@ describe('Given the resource repository Service', () => {
         let service: UsersRepository;
 
         beforeEach(() => {
-            service = new UsersRepository('test');
+            service = new UsersRepository();
         });
 
         test('Then it should first return the service as "test"', () => {
             const result = service.url;
-            expect(result).toBe('test');
+            expect(result).toHaveBeenCalled();
         });
         test('Then if I run register service, it should return a promise of users', async () => {
             global.fetch = jest.fn().mockResolvedValue({
