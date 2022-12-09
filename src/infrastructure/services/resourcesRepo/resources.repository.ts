@@ -4,8 +4,8 @@ import { ResourcesRepo } from './resourcesRepoI.js';
 export class ResourceRepository implements ResourcesRepo<Resource> {
     url: string;
 
-    constructor(url = 'http://localhost:7700/resources') {
-        this.url = url ? url : (process.env.REACT_APP_URL_PRODUCT as string);
+    constructor() {
+        this.url = process.env.REACT_APP_URL_RESOURCES as string;
     }
 
     createError(response: Response) {

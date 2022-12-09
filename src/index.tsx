@@ -4,8 +4,9 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { Provider } from 'react-redux';
 import { appStore } from './store/store';
-import { UserLogin } from './infrastructure/components/userLogin';
 import { BrowserRouter } from 'react-router-dom';
+import { RegisterForm } from './infrastructure/components/userRegister/register';
+import { UserLogin } from './infrastructure/components/userLogin/userLogin';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -14,6 +15,7 @@ root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Provider store={appStore}>
+                <RegisterForm></RegisterForm>
                 <UserLogin></UserLogin>
             </Provider>
         </BrowserRouter>

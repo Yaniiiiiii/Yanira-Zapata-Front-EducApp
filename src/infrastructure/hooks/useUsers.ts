@@ -44,9 +44,10 @@ export const useUsers = () => {
             .catch((error: Error) => console.log(error.name, error.message));
     };
 
-    const handleDeleteUser = (id: Partial<Resource>) => {
+    const handleDeleteUser = () => {
         apiUsers
             .deleteUser()
+            .then(() => dispatcher(ac.logoutActionCreatorUsers()))
             .catch((error: Error) => console.log(error.name, error.message));
     };
 
