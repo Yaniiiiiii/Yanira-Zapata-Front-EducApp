@@ -4,7 +4,6 @@ import { useUsers } from '../../hooks/useUsers';
 export function UserLogin() {
     const title = 'Welcome Back';
     const { users, handleLogin } = useUsers();
-    console.log(users);
 
     const formInitialState = { email: '', password: '' };
     const [login, setLogin] = useState(formInitialState);

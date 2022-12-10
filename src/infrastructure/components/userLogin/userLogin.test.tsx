@@ -3,10 +3,12 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { rootState, rootStore } from '../../../store/store';
+import { useUsers } from '../../hooks/useUsers';
 import { resourceReducer } from '../../reducer/resourceReducer';
 import { usersReducer } from '../../reducer/usersReducer';
 import { UserLogin } from './userLogin';
 
+jest.mock('../../hooks/useUsers');
 const preloadedState: rootState = {
     resources: [],
     users: {
@@ -26,31 +28,27 @@ const mockStore: rootStore = configureStore({
 
 describe('Given the user Login  component', () => {
     describe('When we submit the form', () => {
-        // eslint-disable-next-line @typescript-eslint/ban-types
-
         test('Then it should render the logIn form', () => {
+            (useUsers as jest.Mock).mockReturnValue({
+                users: {},
+                handleLogin: jest.fn(),
+            });
+
             render(
                 <Provider store={mockStore}>
                     <UserLogin />
                 </Provider>
             );
 
-            const formInput = screen.getAllByRole('textbox');
-            fireEvent.change(formInput[0], { target: { value: 'test' } });
+            const input = screen.getByPlaceholderText(
+                /email/i
+            ) as HTMLFormElement;
+            fireEvent.change(input, { target: { value: 'email' } });
+
             const element = screen.getByRole('button');
             userEvent.click(element);
-            expect(formInput[0]).toBeInTheDocument();
+            expect(useUsers().handleLogin).toHaveBeenCalled();
+            expect(input).toBeInTheDocument();
         });
-
-        // test('Then it should render the logIn form', () => {
-        //     render(
-        //         <Provider store={mockStore}>
-        //             <UserLogin />
-        //         </Provider>
-        //     );
-
-        //     const element = screen.getByRole('button');
-
-        // });
     });
 });
