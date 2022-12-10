@@ -90,3 +90,4 @@ export function AddResource() {
         </section>
     );
 }
+export default AddResource;

@@ -21,11 +21,11 @@ root.render(
         <BrowserRouter>
             <Provider store={appStore}>
                 <AppRoutes></AppRoutes>
-                <DeleteUser></DeleteUser>
+                {/* <DeleteUser></DeleteUser>
                 <RegisterForm></RegisterForm>
                 <UserLogin></UserLogin>
                 <ResourcesList></ResourcesList>
-                <AddResource></AddResource>
+                <AddResource></AddResource> */}
 
                 <Footer></Footer>
             </Provider>

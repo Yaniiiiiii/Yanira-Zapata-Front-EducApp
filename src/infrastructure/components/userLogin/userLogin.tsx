@@ -55,3 +55,4 @@ export function UserLogin() {
         </section>
     );
 }
+export default UserLogin;

@@ -1,12 +1,17 @@
 import { ResourceItem } from '../resourceItem/resourceItem';
 import { useResources } from '../../../infrastructure/hooks/useResources';
 import { Resource } from '../../../infrastructure/services/types/resources.types';
+import { useEffect } from 'react';
 
 export function ResourcesList() {
     const title = 'Resources';
     const { resources, handleLoad } = useResources();
+
     console.log(resources);
 
+    useEffect(() => {
+        handleLoad();
+    }, [handleLoad]);
     return resources.length ? (
         <section>
             <p>{resources[0].title}</p>
@@ -27,7 +32,7 @@ export function ResourcesList() {
             </ul>
         </section>
     ) : (
-        <div>Tal</div>
+        <div>Cargando...</div>
     );
 }
 export default ResourcesList;

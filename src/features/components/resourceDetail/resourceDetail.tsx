@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useResources } from '../../../infrastructure/hooks/useResources';
 import { useUsers } from '../../../infrastructure/hooks/useUsers';
 import {
     Grade,
@@ -18,6 +19,8 @@ export function ResourceDetails() {
 
     const [details, setDetails] = useState(initialState);
     const { handleAddFavorites, handleDeleteFavorites } = useUsers();
+
+    const { handleUpdate } = useResources();
 
     const { id } = useParams();
 
@@ -40,9 +43,9 @@ export function ResourceDetails() {
         handleDeleteFavorites(details);
     };
 
-    // const handleEdit = () => {
-    //     handleUpdate({ ...item });
-    // };
+    const handleEdit = () => {
+        handleUpdate(details as Resource);
+    };
     console.log(details);
 
     return (
@@ -57,7 +60,10 @@ export function ResourceDetails() {
             <button className="like" onClick={handleLike}>
                 ADD FAV
             </button>
-            {/* <button className="edit" onClick={handleEdit}></button> */}
+            <button className="edit" onClick={handleEdit}>
+                {' '}
+                EDIT
+            </button>
             <button className="delete" onClick={handleRemove}>
                 DELETE FAV
             </button>
