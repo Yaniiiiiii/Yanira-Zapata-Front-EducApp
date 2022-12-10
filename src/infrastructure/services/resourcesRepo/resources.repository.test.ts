@@ -9,10 +9,6 @@ describe('Given the resource repository Service', () => {
             service = new ResourceRepository();
         });
 
-        test('Then it should first return the service as "test"', () => {
-            const result = service.url;
-            expect(result).toBe(process.env.REACT_APP_URL_RESOURCES);
-        });
         test('Then if I run getAll service, it should return the service an array of resources', async () => {
             global.fetch = jest.fn().mockResolvedValue({
                 ok: true,

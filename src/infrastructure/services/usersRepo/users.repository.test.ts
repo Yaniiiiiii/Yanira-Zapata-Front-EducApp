@@ -9,10 +9,6 @@ describe('Given the resource repository Service', () => {
             service = new UsersRepository();
         });
 
-        test('Then it should first return the service as "test"', () => {
-            const result = service.url;
-            expect(result).toHaveBeenCalled();
-        });
         test('Then if I run register service, it should return a promise of users', async () => {
             global.fetch = jest.fn().mockResolvedValue({
                 ok: true,
@@ -91,7 +87,7 @@ describe('Given the resource repository Service', () => {
         });
 
         test(`Then if there is a create error`, async () => {
-            const expectedResult = await service.deleteFavorites({});
+            const expectedResult = await service.deleteFavorites('');
             const error = new Error('Error 400: error');
             error.name = 'HTTPError';
             expect(expectedResult).toBe(error.toString());
@@ -103,11 +99,5 @@ describe('Given the resource repository Service', () => {
             error.name = 'HTTPError';
             expect(expectedResult).toBe(error.toString());
         });
-        // test(`Then if there is a update error`, async () => {
-        //     const expectedResult = await service.(mockResource);
-        //     const error = new Error('Error 400: error');
-        //     error.name = 'HTTPError';
-        //     expect(expectedResult).toBe(error.toString());
-        // });
     });
 });

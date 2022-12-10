@@ -24,7 +24,7 @@ export function AppRoutes() {
                 </Route>
 
                 {/* <Route path="/Favorites" element={}></Route> */}
-                <Route path="/AboutUs" element={<AboutUs></AboutUs>}></Route>
+                <Route path="aboutUs" element={<AboutUs></AboutUs>}></Route>
             </Routes>
         </Suspense>
     );
