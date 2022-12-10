@@ -23,22 +23,19 @@ export const useUsers = () => {
                 dispatcher(ac.loginActionCreatorUsers(data))
             )
             .catch((error: Error) => console.log(error.name, error.message));
-        console.log(user);
     };
 
-    const handleAddFavorites = (id: Partial<Resource>) => {
+    const handleAddFavorites = (resource: Partial<Resource>) => {
         apiUsers
-            .addFavorites(id)
-            .then((user: User) =>
-                dispatcher(ac.addFavoritesActionCreatorUsers(user))
-            )
+            .addFavorites(resource.id as string)
+            .then((user) => dispatcher(ac.addFavoritesActionCreatorUsers(user)))
             .catch((error: Error) => console.log(error.name, error.message));
     };
 
-    const handleDeleteFavorites = (id: Partial<Resource>) => {
+    const handleDeleteFavorites = (resource: Partial<Resource>) => {
         apiUsers
-            .deleteFavorites(id)
-            .then((user: User) =>
+            .deleteFavorites(resource.id as string)
+            .then((user) =>
                 dispatcher(ac.deleteFavoritesActionCreatorUsers(user))
             )
             .catch((error: Error) => console.log(error.name, error.message));

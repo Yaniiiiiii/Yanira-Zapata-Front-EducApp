@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../store/hooks';
 import { ResourceRepository } from '../services/resourcesRepo/resources.repository';
@@ -22,11 +22,8 @@ export const useResources = () => {
                 ),
         [apiResource, dispatcher]
     );
-    useEffect(() => {
-        handleLoad();
-    }, [handleLoad]);
 
-    const handleAdd = (newResource: Resource) => {
+    const handleAdd = (newResource: Partial<Resource>) => {
         apiResource
             .create(newResource)
             .then((resource: Resource) =>

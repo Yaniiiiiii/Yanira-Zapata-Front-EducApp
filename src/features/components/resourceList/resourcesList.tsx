@@ -1,6 +1,6 @@
-import { ResourceItem } from '../../features/components/resourceItem/resourceItem';
-import { useResources } from '../hooks/useResources';
-import { Resource } from '../services/types/resources.types';
+import { ResourceItem } from '../resourceItem/resourceItem';
+import { useResources } from '../../../infrastructure/hooks/useResources';
+import { Resource } from '../../../infrastructure/services/types/resources.types';
 
 export function ResourcesList() {
     const title = 'Resources';
@@ -30,3 +30,4 @@ export function ResourcesList() {
         <div>Tal</div>
     );
 }
+export default ResourcesList;

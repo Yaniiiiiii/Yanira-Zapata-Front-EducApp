@@ -1,10 +1,8 @@
 import { SyntheticEvent, useState } from 'react';
-import { User } from '../../services/types/users.types';
 import { UsersRepository } from '../../services/usersRepo/users.repository';
 
 type formData = {
     name: string;
-    // last_name: string;
     email: string;
     password: string;
     school: string;

@@ -7,6 +7,11 @@ import { appStore } from './store/store';
 import { BrowserRouter } from 'react-router-dom';
 import { RegisterForm } from './infrastructure/components/userRegister/register';
 import { UserLogin } from './infrastructure/components/userLogin/userLogin';
+import { AddResource } from './features/components/addResource/addResource';
+import { DeleteUser } from './features/components/deleteUser/deleteUser';
+import Footer from './infrastructure/components/footer/footer';
+import { AppRoutes } from './routes/app.routes';
+import ResourcesList from './features/components/resourceList/resourcesList';
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -15,8 +20,14 @@ root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Provider store={appStore}>
+                <AppRoutes></AppRoutes>
+                <DeleteUser></DeleteUser>
                 <RegisterForm></RegisterForm>
                 <UserLogin></UserLogin>
+                <ResourcesList></ResourcesList>
+                <AddResource></AddResource>
+
+                <Footer></Footer>
             </Provider>
         </BrowserRouter>
     </React.StrictMode>

@@ -1,34 +1,17 @@
-import { useResources } from '../../../infrastructure/hooks/useResources';
+import { Link } from 'react-router-dom';
 import { Resource } from '../../../infrastructure/services/types/resources.types';
 
 export function ResourceItem({ item }: { item: Resource }) {
-    const title = 'Resource';
-    const { handleAdd, handleDelete, handleUpdate } = useResources();
-
-    const handleLike = () => {
-        handleAdd({ ...item });
-    };
-
-    const handleRemove = () => {
-        handleDelete(item.id);
-    };
-
-    const handleEdit = () => {
-        handleUpdate({ ...item });
-    };
-
     return (
         <li className="resourceItem">
-            <h2>{item.title}</h2>
-            <p>{item.owner.name}</p>
-            <p>{item.pages}</p>
-            <p>{item.subject}</p>
-            <p>{item.grade}</p>
-            <p>{item.description}</p>
-            <iframe src="https://opendocs.com/wp-content/uploads/2019/10/Blank-Simple-Invoice.pdf"></iframe>
-            <button className="like" onClick={handleLike}></button>
-            <button className="edit" onClick={handleEdit}></button>
-            <button className="delete" onClick={handleRemove}></button>
+            <Link to={'/resources/' + item.id} key={item.id}>
+                <div>
+                    <iframe src={item.format}></iframe>
+                    <p>{item.subject}</p>
+                    <p>{item.grade}</p>
+                </div>
+            </Link>
         </li>
     );
 }
+export default ResourceItem;

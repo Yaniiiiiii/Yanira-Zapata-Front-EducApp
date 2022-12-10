@@ -1,4 +1,3 @@
-import { Resource } from '../types/resources.types';
 import { User } from '../types/users.types';
 
 export class UsersRepository {
@@ -50,10 +49,9 @@ export class UsersRepository {
             });
     }
 
-    addFavorites(id: Partial<Resource>): Promise<User> {
+    addFavorites(id: string): Promise<User> {
         return fetch(`${this.url}/addFavorites/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify(id),
             headers: {
                 'content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -66,10 +64,9 @@ export class UsersRepository {
             .catch((error) => `${error}`);
     }
 
-    deleteFavorites(id: Partial<Resource>): Promise<User> {
+    deleteFavorites(id: string): Promise<User> {
         return fetch(`${this.url}/deleteFavorites/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify(id),
             headers: {
                 'content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,

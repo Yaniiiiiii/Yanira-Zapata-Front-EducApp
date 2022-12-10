@@ -5,7 +5,7 @@ export class ResourceRepository implements ResourcesRepo<Resource> {
     url: string;
 
     constructor() {
-        this.url = process.env.REACT_APP_URL_RESOURCES as string;
+        this.url = 'http://localhost:7700/resources';
     }
 
     createError(response: Response) {

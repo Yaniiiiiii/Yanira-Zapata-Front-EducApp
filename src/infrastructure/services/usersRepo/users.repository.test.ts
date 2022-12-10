@@ -36,7 +36,7 @@ describe('Given the resource repository Service', () => {
                 ok: true,
                 json: jest.fn().mockResolvedValue(''),
             });
-            const result = await service.addFavorites({ id: '' });
+            const result = await service.addFavorites('');
             expect(fetch).toBeCalled();
             expect(result).toBe('');
         });
@@ -45,7 +45,7 @@ describe('Given the resource repository Service', () => {
                 ok: true,
                 json: jest.fn().mockResolvedValue(''),
             });
-            const result = await service.deleteFavorites({ id: '' });
+            const result = await service.deleteFavorites('');
             expect(fetch).toHaveBeenCalled();
             expect(result).toEqual('');
         });
@@ -84,7 +84,7 @@ describe('Given the resource repository Service', () => {
             expect(expectedResult).toBe(error.toString());
         });
         test(`Then if there is a addFavorites error`, async () => {
-            const expectedResult = await service.addFavorites({});
+            const expectedResult = await service.addFavorites('');
             const error = new Error('Error 400: error');
             error.name = 'HTTPError';
             expect(expectedResult).toBe(error.toString());
