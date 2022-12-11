@@ -46,7 +46,7 @@ export const mockUser = {
     role: 'Teacher',
     school: 'Peete',
     grade: 'first',
-    favorites: mockResources[0],
+    favorites: [] as Resource[],
     password: 'string',
     resources: [],
 };

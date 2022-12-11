@@ -34,7 +34,7 @@ export function AppRoutes() {
             <Routes>
                 <Route path="" element={<LoginPage></LoginPage>}></Route>
                 <Route
-                    path=""
+                    path="/search"
                     element={<SearchReasources></SearchReasources>}
                 ></Route>
 
@@ -57,7 +57,7 @@ export function AppRoutes() {
                     path="/favoritePage"
                     element={<FavoritePage></FavoritePage>}
                 ></Route>
-                <Route path="aboutUs" element={<AboutUs></AboutUs>}></Route>
+                <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route>
                 <Route
                     path="*"
                     element={<WorkingInProgress></WorkingInProgress>}
