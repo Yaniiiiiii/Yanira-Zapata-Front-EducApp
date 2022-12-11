@@ -45,6 +45,7 @@ export function AddResource() {
                         placeholder="Title"
                         value={addResource.title}
                         onInput={handleInput}
+                        aria-label="title"
                         required
                     ></input>
                 </div>
@@ -56,6 +57,7 @@ export function AddResource() {
                         placeholder="Subject"
                         value={addResource.subject}
                         onInput={handleInput}
+                        aria-label="subject"
                         required
                     ></input>
                 </div>
@@ -67,6 +69,19 @@ export function AddResource() {
                         placeholder="Grade"
                         value={addResource.grade}
                         onInput={handleInput}
+                        aria-label="grade"
+                        required
+                    ></input>
+                </div>
+                <div className="add--pages">
+                    {' '}
+                    <input
+                        type="text"
+                        name="description"
+                        placeholder="description"
+                        value={addResource.description}
+                        onInput={handleInput}
+                        aria-label="description"
                         required
                     ></input>
                 </div>
@@ -78,6 +93,7 @@ export function AddResource() {
                         placeholder="Pages"
                         value={addResource.pages}
                         onInput={handleInput}
+                        aria-label="pages"
                         required
                     ></input>
                 </div>
@@ -91,6 +107,7 @@ export function AddResource() {
                         accept="image/*,.pdf"
                         value={addResource.format}
                         onInput={handleInput}
+                        aria-label="file"
                         required
                     ></input>
                 </div>

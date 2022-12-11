@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
+import { MemoryRouter as Router } from 'react-router-dom';
 import { useResources } from '../../../infrastructure/hooks/useResources';
-
 import { appStore } from '../../../store/store';
 import { AddResource } from './addResource';
 
@@ -17,7 +17,7 @@ describe('given addForm component', () => {
             { role: 'textbox', name: 'grade' },
             { role: 'textbox', name: 'description' },
             { role: 'textbox', name: 'pages' },
-            { role: 'spinbutton', name: 'price' },
+            { role: 'file', name: 'file' },
             { role: 'button', name: 'Create Resource' },
         ];
 
@@ -25,27 +25,18 @@ describe('given addForm component', () => {
 
         render(
             <Provider store={appStore}>
-                <AddResource></AddResource>
+                <Router>
+                    <AddResource></AddResource>
+                </Router>
             </Provider>
         );
     });
 
-    describe('when the form is rendered', () => {
-        test('then it should display a form with the inputs and buttons', () => {
-            formElements.forEach((item) => {
-                const element: HTMLFormElement = screen.getByRole(item.role, {
-                    name: item.name,
-                });
-                expect(element).toBeInTheDocument();
-            });
-        });
-    });
-
     describe('when the user types in the inputs', () => {
-        test('then the typed text in second input should be in the screen', () => {
+        test('then the typed text in second input should be on the screen', () => {
             const mockTyped = 'test';
 
-            const input = screen.getByRole(formElements[1].role, {
+            const input = screen.getByRole(formElements[0].role, {
                 name: formElements[0].name,
             });
 
