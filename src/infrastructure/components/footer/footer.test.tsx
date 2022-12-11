@@ -12,7 +12,7 @@ describe('Given the footer component', () => {
                     </footer>
                 </Router>
             );
-            expect(screen.getByAltText('User icon')).toBeInTheDocument();
+            expect(screen.getByAltText('Home icon')).toBeInTheDocument();
         });
     });
 });
