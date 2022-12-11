@@ -43,7 +43,7 @@ export function RegisterForm() {
                         <input
                             type="text"
                             name="name"
-                            placeholder="Name"
+                            placeholder="Name and last name"
                             value={formState.name}
                             onInput={handleInput}
                             required
@@ -73,21 +73,18 @@ export function RegisterForm() {
                         <input
                             type="text"
                             name="school"
-                            placeholder="School"
+                            placeholder="School where you teach"
                             value={formState.school}
                             onInput={handleInput}
-                            required
-                            // minlength="9"
                         />
                     </div>
                     <div className="form__subject">
                         <input
                             type="text"
                             name="subject"
-                            placeholder="subject"
+                            placeholder="Subject you teach"
                             value={formState.subject}
                             onInput={handleInput}
-                            required
                         />
                     </div>
                     <button type="submit" className="form__button">

@@ -1,6 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { resourceReducer } from '../infrastructure/reducer/resourceReducer';
 import { usersReducer } from '../infrastructure/reducer/usersReducer';
+import {
+    Grade,
+    Subject,
+} from '../infrastructure/services/types/resources.types';
+import { User } from '../infrastructure/services/types/users.types';
 
 export const appStore = configureStore({
     reducer: {

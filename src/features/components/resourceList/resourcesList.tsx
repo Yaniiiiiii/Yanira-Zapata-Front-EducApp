@@ -7,11 +7,10 @@ export function ResourcesList() {
     const title = 'Resources';
     const { resources, handleLoad } = useResources();
 
-    console.log(resources);
-
     useEffect(() => {
         handleLoad();
     }, [handleLoad]);
+
     return resources.length ? (
         <section>
             <p>{resources[0].title}</p>
@@ -32,7 +31,7 @@ export function ResourcesList() {
             </ul>
         </section>
     ) : (
-        <div>Cargando...</div>
+        <div>Loading...</div>
     );
 }
 export default ResourcesList;

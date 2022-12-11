@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../store/hooks';
 import { UsersRepository } from '../services/usersRepo/users.repository';
 import * as ac from '../reducer/actionCreator';
-import { User } from '../services/types/users.types';
+import { ProtoUser, User } from '../services/types/users.types';
 import { Resource } from '../services/types/resources.types';
 
 export const useUsers = () => {
@@ -16,12 +16,12 @@ export const useUsers = () => {
             .catch((error: Error) => console.log(error.name, error.message));
     };
 
-    const handleLogin = (user: Partial<User>) => {
+    const handleLogin = (user: Partial<ProtoUser>) => {
         apiUsers
             .logIn(user)
-            .then((data: string) =>
-                dispatcher(ac.loginActionCreatorUsers(data))
-            )
+            .then((res) => {
+                return dispatcher(ac.loginActionCreatorUsers(res));
+            })
             .catch((error: Error) => console.log(error.name, error.message));
     };
 

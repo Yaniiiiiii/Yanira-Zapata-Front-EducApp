@@ -31,7 +31,7 @@ export class UsersRepository {
             });
     }
 
-    logIn(data: Partial<User>): Promise<string> {
+    logIn(data: Partial<User>): Promise<{ user: User; token: string }> {
         return fetch(`${this.url}/login`, {
             method: 'POST',
             body: JSON.stringify(data),
@@ -43,7 +43,11 @@ export class UsersRepository {
                 if (response.ok) return response.json();
                 throw this.createError(response);
             })
-            .then((response) => response.token)
+            .then((response) => {
+                localStorage.setItem('token', response.token);
+                return response;
+            })
+
             .catch((error) => {
                 return `${error}`;
             });

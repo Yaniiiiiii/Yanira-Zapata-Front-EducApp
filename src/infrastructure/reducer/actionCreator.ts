@@ -19,9 +19,10 @@ export const updateActionCreatorResource = createAction<Resource>(
 export const loggingActionCreatorUsers = createAction<void>(
     actionTypesUsers.logging
 );
-export const loginActionCreatorUsers = createAction<string>(
-    actionTypesUsers.login
-);
+export const loginActionCreatorUsers = createAction<{
+    user: User;
+    token: string;
+}>(actionTypesUsers.login);
 export const logoutActionCreatorUsers = createAction<void>(
     actionTypesUsers.logout
 );

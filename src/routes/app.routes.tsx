@@ -16,14 +16,28 @@ const Details = lazy(
 const AddResource = lazy(
     () => import('../features/components/addResource/addResource')
 );
-// const FavoritePage = lazy(() => import('../features/pages/favPage/'));
+const FavoritePage = lazy(() => import('../features/pages/favPage/favPage'));
+
 const AboutUs = lazy(() => import('../features/components/aboutUs/aboutUs'));
+
+const WorkingInProgress = lazy(
+    () => import('../features/pages/clientInfo/working')
+);
+
+const SearchReasources = lazy(
+    () => import('../features/components/searchBar/searchBar')
+);
 
 export function AppRoutes() {
     return (
         <Suspense>
             <Routes>
                 <Route path="" element={<LoginPage></LoginPage>}></Route>
+                <Route
+                    path=""
+                    element={<SearchReasources></SearchReasources>}
+                ></Route>
+
                 <Route
                     path="/register"
                     element={<RegisterPage></RegisterPage>}
@@ -39,11 +53,14 @@ export function AppRoutes() {
                     path="/addResource"
                     element={<AddResource></AddResource>}
                 ></Route>
-                {/* <Route path="/cd" element={<FavoritePage></FavoritePage>}></Route> */}
+                <Route
+                    path="/favoritePage"
+                    element={<FavoritePage></FavoritePage>}
+                ></Route>
                 <Route path="aboutUs" element={<AboutUs></AboutUs>}></Route>
                 <Route
                     path="*"
-                    element={<h1>Sorry, route not found</h1>}
+                    element={<WorkingInProgress></WorkingInProgress>}
                 ></Route>
             </Routes>
         </Suspense>

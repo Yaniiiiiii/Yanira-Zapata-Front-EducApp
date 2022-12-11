@@ -17,14 +17,14 @@ export function DeleteUser() {
     };
 
     return (
-        <section>
+        <section className="delete--account">
             <h2>Please introduce your credentials to delete your account</h2>
             {/* <div className="form__name">
                 <input
                     type="email"
                     name="email"
                     placeholder="Email"
-                    value={deleteUser.email}
+                    value={}
                     onInput={handleInput}
                     required
                 />

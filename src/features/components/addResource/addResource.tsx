@@ -12,7 +12,7 @@ export function AddResource() {
         grade: undefined,
         description: '',
         pages: '',
-        price: '',
+        format: '',
     };
 
     const [addResource, setAddResource] = useState(formInitialState);
@@ -26,7 +26,7 @@ export function AddResource() {
         ev.preventDefault();
         const newResource: ProtoResource = {
             ...addResource,
-            price: +addResource.price,
+            title: addResource.title,
         };
         handleAdd(newResource);
         setAddResource(formInitialState);
@@ -37,7 +37,7 @@ export function AddResource() {
             <h2>{title}</h2>
 
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="add--title">
                     {' '}
                     <input
                         type="text"
@@ -48,7 +48,7 @@ export function AddResource() {
                         required
                     ></input>
                 </div>
-                <div>
+                <div className="add--subject">
                     {' '}
                     <input
                         type="text"
@@ -59,30 +59,42 @@ export function AddResource() {
                         required
                     ></input>
                 </div>
-                <input
-                    type="text"
-                    name="grade"
-                    placeholder="Grade"
-                    value={addResource.grade}
-                    onInput={handleInput}
-                    required
-                ></input>
-                <input
-                    type="text"
-                    name="pages"
-                    placeholder="Pages"
-                    value={addResource.pages}
-                    onInput={handleInput}
-                    required
-                ></input>
-                <input
-                    type="number"
-                    name="price"
-                    placeholder="Price"
-                    value={addResource.price}
-                    onInput={handleInput}
-                    required
-                ></input>
+                <div className="add--grade">
+                    {' '}
+                    <input
+                        type="text"
+                        name="grade"
+                        placeholder="Grade"
+                        value={addResource.grade}
+                        onInput={handleInput}
+                        required
+                    ></input>
+                </div>
+                <div className="add--pages">
+                    {' '}
+                    <input
+                        type="text"
+                        name="pages"
+                        placeholder="Pages"
+                        value={addResource.pages}
+                        onInput={handleInput}
+                        required
+                    ></input>
+                </div>
+
+                <div className="add--file">
+                    <label htmlFor="file">Upload your resource</label>
+                    <input
+                        type="file"
+                        name="file"
+                        id="file"
+                        accept="image/*,.pdf"
+                        value={addResource.format}
+                        onInput={handleInput}
+                        required
+                    ></input>
+                </div>
+
                 <button className="addResourceButton" type="submit">
                     Create Resource
                 </button>
