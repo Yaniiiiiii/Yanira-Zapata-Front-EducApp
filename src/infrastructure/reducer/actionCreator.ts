@@ -16,6 +16,10 @@ export const updateActionCreatorResource = createAction<Resource>(
     actionTypesResources.update
 );
 
+export const resourceSearchCreatorAction = createAction<Array<Resource>>(
+    actionTypesResources.loadSearch
+);
+
 export const loggingActionCreatorUsers = createAction<void>(
     actionTypesUsers.logging
 );

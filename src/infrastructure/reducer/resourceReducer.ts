@@ -22,5 +22,9 @@ export const resourceReducer = createReducer(initialState, (builder) => {
             resource.id !== action.payload.id ? action.payload : resource
         );
     });
+    builder.addCase(
+        ac.resourceSearchCreatorAction,
+        (_state, action) => action.payload
+    );
     builder.addDefaultCase((state) => state);
 });

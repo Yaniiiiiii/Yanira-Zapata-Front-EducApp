@@ -1,8 +1,9 @@
 import { ResourceRepository } from '../../../../src/infrastructure/services/resourcesRepo/resources.repository';
 import { SyntheticEvent, useState } from 'react';
+import { useResources } from '../../../infrastructure/hooks/useResources';
 
 export function SearchBar() {
-    const initialState = {
+    const initialState: { subject: string; grade: string } = {
         subject: '',
         grade: '',
     };
@@ -13,32 +14,49 @@ export function SearchBar() {
         setFormState({ ...formState, [element.name]: element.value });
     };
 
-    const resourceRepo = new ResourceRepository();
+    const { handleSearch, handleLoad } = useResources();
 
-    const handleSearch = (ev: SyntheticEvent) => {
+    const handleSearchResource = (ev: SyntheticEvent) => {
         ev.preventDefault();
-        resourceRepo.query();
-        setFormState(initialState);
+        // if (formState.subject === '') handleLoad();
+        handleSearch(formState.grade, formState.subject);
     };
 
+    // const handleChange = (ev: SyntheticEvent) => {
+    //     ev.preventDefault();
+    //     const element = ev.target as HTMLFormElement;
+    //     setFormState({ ...formState, [element.name]: element.value });
+    // };
+
     return (
-        <form onSubmit={handleSearch}>
-            <input
-                type="text"
-                placeholder="Subject"
-                name="search"
-                value={formState.subject}
-                onInput={handleInput}
-            />
-            <input
-                type="text"
-                placeholder="Grade"
-                name="search"
-                value={formState.grade}
-                onInput={handleInput}
-            />
-            <button type="submit" />
-        </form>
+        <>
+            <div>
+                <form action="" onSubmit={handleSearchResource}>
+                    <input
+                        type="text"
+                        value={formState.subject}
+                        name="grade"
+                        onChange={handleInput}
+                    />
+                    {/* <select name="subject" onChange={handleInput}>
+                        <option value=""></option>
+                        <option value="reading">Reading</option>
+                        <option value="math">Math</option>
+                        <option value="science">Science</option>
+                        <option value="writing">Writing</option>
+                    </select> */}
+                    <button type="submit">SEARCH</button>
+                </form>
+            </div>
+            <div>
+                <input
+                    type="text"
+                    value={formState.grade}
+                    name="grade"
+                    onChange={handleInput}
+                />
+            </div>
+        </>
     );
 }
 export default SearchBar;

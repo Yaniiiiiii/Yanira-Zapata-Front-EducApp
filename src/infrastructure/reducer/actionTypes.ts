@@ -3,6 +3,7 @@ export const actionTypesResources = {
     add: 'resources@add',
     delete: 'resources@delete',
     update: 'resources@update',
+    loadSearch: 'resources@loadSearch',
 };
 
 export const actionTypesUsers = {
