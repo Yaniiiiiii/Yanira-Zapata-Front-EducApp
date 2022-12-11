@@ -1,0 +1,48 @@
+.form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+}
+
+.form__title1 {
+    border: 0;
+    border-color: inherit;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: flex;
+    font-family: 'Space Grotesk', sans-serif;
+    color: rgba(57, 131, 60, 1);
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 36px;
+    outline: none;
+}
+.form__title2 {
+    margin-top: 0px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: rgba(12, 69, 28, 1);
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: normal;
+}
+.form__name ::placeholder {
+    font-weight: normal;
+    font-size: ;
+    color: rgba(12, 69, 28, 1);
+    border: none;
+    border: 0;
+}
+
+.form__email {
+}
+.form__password {
+}
+.form__school {
+}
+
+.form__button {
+}

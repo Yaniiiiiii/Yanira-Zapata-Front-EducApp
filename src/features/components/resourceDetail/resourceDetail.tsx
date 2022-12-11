@@ -46,7 +46,6 @@ export function ResourceDetails() {
     const handleEdit = () => {
         handleUpdate(details as Resource);
     };
-    console.log(details);
 
     return (
         <li className="resourceItem">

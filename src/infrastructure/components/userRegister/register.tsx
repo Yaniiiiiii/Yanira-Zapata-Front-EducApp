@@ -1,5 +1,6 @@
 import { SyntheticEvent, useState } from 'react';
 import { UsersRepository } from '../../services/usersRepo/users.repository';
+import styles from './register.module.css';
 
 type formData = {
     name: string;
@@ -35,11 +36,11 @@ export function RegisterForm() {
 
     return (
         <>
-            <section className="form">
-                <h2>Create an account</h2>
-                <h3>Let's get started!</h3>
+            <section className={styles.form}>
+                <h2 className={styles.form__title1}>Create an account</h2>
+                <h3 className={styles.form__title2}>Let's get started!</h3>
                 <form onSubmit={handleRegister}>
-                    <div className="form__name">
+                    <div className={styles.form__name}>
                         <input
                             type="text"
                             name="name"
@@ -49,8 +50,9 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="form__email">
+                    <div>
                         <input
+                            className={styles.form__email}
                             type="email"
                             name="email"
                             placeholder="Email"
@@ -59,7 +61,7 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="form__password">
+                    <div className={styles.form__password}>
                         <input
                             type="password"
                             name="password"
@@ -69,7 +71,7 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className="form__school">
+                    <div className={styles.form__school}>
                         <input
                             type="text"
                             name="school"
@@ -78,7 +80,7 @@ export function RegisterForm() {
                             onInput={handleInput}
                         />
                     </div>
-                    <div className="form__subject">
+                    <div className={styles.form__subject}>
                         <input
                             type="text"
                             name="subject"
@@ -87,7 +89,7 @@ export function RegisterForm() {
                             onInput={handleInput}
                         />
                     </div>
-                    <button type="submit" className="form__button">
+                    <button type="submit" className={styles.form__button}>
                         Create account
                     </button>
                 </form>
