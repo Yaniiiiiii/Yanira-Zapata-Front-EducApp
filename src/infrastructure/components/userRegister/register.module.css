@@ -34,6 +34,7 @@
     justify-content: flex-end;
     width: 314px;
     height: 44px;
+    border-bottom-color: black;
 }
 .form__input::placeholder {
     font-family: 'Space Grotesk', sans-serif;
