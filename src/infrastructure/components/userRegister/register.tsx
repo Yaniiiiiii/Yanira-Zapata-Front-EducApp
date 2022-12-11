@@ -40,7 +40,7 @@ export function RegisterForm() {
                 <h2 className={styles.form__title1}>Create an account</h2>
                 <h3 className={styles.form__title2}>Let's get started!</h3>
                 <form onSubmit={handleRegister}>
-                    <div className={styles.form__name}>
+                    <div className={styles.form__input}>
                         <input
                             type="text"
                             name="name"
@@ -52,7 +52,7 @@ export function RegisterForm() {
                     </div>
                     <div>
                         <input
-                            className={styles.form__email}
+                            className={styles.form__input}
                             type="email"
                             name="email"
                             placeholder="Email"
@@ -61,7 +61,7 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className={styles.form__password}>
+                    <div className={styles.form__input}>
                         <input
                             type="password"
                             name="password"
@@ -71,7 +71,7 @@ export function RegisterForm() {
                             required
                         />
                     </div>
-                    <div className={styles.form__school}>
+                    <div className={styles.form__input}>
                         <input
                             type="text"
                             name="school"
@@ -80,7 +80,7 @@ export function RegisterForm() {
                             onInput={handleInput}
                         />
                     </div>
-                    <div className={styles.form__subject}>
+                    <div className={styles.form__input}>
                         <input
                             type="text"
                             name="subject"

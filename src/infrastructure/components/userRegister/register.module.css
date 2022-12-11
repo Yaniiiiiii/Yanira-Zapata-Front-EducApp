@@ -10,8 +10,6 @@
 .form__title1 {
     border: 0;
     border-color: inherit;
-    -webkit-box-shadow: none;
-    box-shadow: none;
     display: flex;
     font-family: 'Space Grotesk', sans-serif;
     color: rgba(57, 131, 60, 1);
@@ -29,20 +27,30 @@
     font-size: 16px;
     font-weight: normal;
 }
-.form__name ::placeholder {
-    font-weight: normal;
-    font-size: ;
+.form__input {
+    font-family: 'Space Grotesk', sans-serif;
+    align-items: center;
+    justify-content: flex-end;
+    width: 314px;
+    height: 44px;
+}
+.form__input::placeholder {
+    font-family: 'Space Grotesk', sans-serif;
     color: rgba(12, 69, 28, 1);
-    border: none;
-    border: 0;
-}
-
-.form__email {
-}
-.form__password {
-}
-.form__school {
+    font-size: 16px;
+    font-weight: normal;
 }
 
 .form__button {
+    background-color: rgba(202, 224, 157, 1);
+    font-family: 'Space Grotesk', sans-serif;
+    color: rgba(12, 69, 28, 1);
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 6px;
+    border: solid 1px rgba(202, 224, 157, 1);
+    width: 314px;
+    height: 44px;
 }

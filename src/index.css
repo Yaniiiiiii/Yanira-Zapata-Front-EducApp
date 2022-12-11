@@ -14,3 +14,8 @@ main {
     min-height: 70vh;
     padding: 1rem;
 }
+
+input {
+    display: inline;
+    border: none;
+}
