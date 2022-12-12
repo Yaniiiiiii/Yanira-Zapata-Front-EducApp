@@ -23,7 +23,18 @@ describe('Given ResourceList component', () => {
                     </Router>
                 </Provider>
             );
-            const element = screen.getByText(/Cargando/i);
+            const element = screen.getByText(/loading/i);
+            expect(element).toBeInTheDocument();
+        });
+        test.skip('then it should display the Resource List...', () => {
+            render(
+                <Provider store={mockStore}>
+                    <Router>
+                        <ResourcesList />
+                    </Router>
+                </Provider>
+            );
+            const element = screen.getAllByPlaceholderText(/password/i);
             expect(element).toBeInTheDocument();
         });
     });
