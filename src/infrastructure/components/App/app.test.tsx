@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
+import { appStore } from '../../../store/store';
 import App from './app';
 
 interface CryptoPlus extends Crypto {
@@ -17,10 +19,13 @@ Object.defineProperty(global.self, 'crypto', {
 
 test('renders learn react link', () => {
     render(
-        <Router>
-            <App />
-        </Router>
+        <Provider store={appStore}>
+            <Router>
+                {' '}
+                <App />
+            </Router>
+        </Provider>
     );
-    const linkElement = screen.getByAltText('resources');
+    const linkElement = screen.getByAltText('cart');
     expect(linkElement).toBeInTheDocument();
 });

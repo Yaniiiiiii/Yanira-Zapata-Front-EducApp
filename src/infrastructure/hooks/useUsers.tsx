@@ -1,12 +1,13 @@
 import { useDispatch } from 'react-redux';
-import { useAppSelector } from '../../store/hooks';
 import { UsersRepository } from '../services/usersRepo/users.repository';
 import * as ac from '../reducer/actionCreator';
 import { ProtoUser, User } from '../services/types/users.types';
 import { Resource } from '../services/types/resources.types';
+import { useSelector } from 'react-redux';
+import { rootState } from '../../store/store';
 
 export const useUsers = () => {
-    const users = useAppSelector((state) => state.users);
+    const users = useSelector((state: rootState) => state.users);
     const dispatcher = useDispatch();
     const apiUsers = new UsersRepository();
 
