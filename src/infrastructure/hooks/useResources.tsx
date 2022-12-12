@@ -1,12 +1,14 @@
 import { useCallback, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import { useAppSelector } from '../../store/hooks';
+
 import { ResourceRepository } from '../services/resourcesRepo/resources.repository';
 import * as ac from '../reducer/actionCreator';
 import { Resource } from '../services/types/resources.types';
+import { rootState } from '../../store/store';
+import { useSelector } from 'react-redux';
 
 export const useResources = () => {
-    const resources = useAppSelector((state) => state.resources);
+    const resources = useSelector((state: rootState) => state.resources);
     const dispatcher = useDispatch();
     const apiResource = useMemo(() => new ResourceRepository(), []);
 
