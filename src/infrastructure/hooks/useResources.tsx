@@ -1,6 +1,5 @@
 import { useCallback, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { ResourceRepository } from '../services/resourcesRepo/resources.repository';
 import * as ac from '../reducer/actionCreator';
 import { Resource } from '../services/types/resources.types';

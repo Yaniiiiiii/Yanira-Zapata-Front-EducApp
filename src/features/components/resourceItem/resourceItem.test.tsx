@@ -21,18 +21,9 @@ describe('Given the Resource Item component', () => {
         });
 
         describe('And we are in the fav page', () => {
-            // beforeEach(() => {
-            // //     Object.defineProperty(window, 'location', {
-            // //         value: {
-            // //             pathname: '/Fav',
-            // //         },
-            // //     });
-            // // });
-
-            test('then it should display the resource', () => {
-                expect(
-                    screen.getByDisplayValue(mockResource.subject)
-                ).toBeInTheDocument();
+            test('Then it should display the  "heading" role', () => {
+                const element = screen.getByText('reading');
+                expect(element).toBeInTheDocument();
             });
         });
     });

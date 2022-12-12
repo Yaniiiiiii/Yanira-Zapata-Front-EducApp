@@ -24,14 +24,15 @@ export function ResourceDetails() {
 
     const { id } = useParams();
 
-    const getResourceById = async (id: string | undefined) => {
-        const resource = await fetch(`http://localhost:7700/resources/${id}`)
-            .then((data) => data.json())
-            .then((resp) => resp.resource);
-        setDetails(resource);
-    };
-
     useEffect(() => {
+        const getResourceById = async (id: string | undefined) => {
+            const resource = await fetch(
+                `http://localhost:3300/resources/${id}`
+            )
+                .then((data) => data.json())
+                .then((resp) => resp.resource);
+            setDetails(resource);
+        };
         getResourceById(id);
     }, [id]);
 

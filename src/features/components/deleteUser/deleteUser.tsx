@@ -1,19 +1,21 @@
+import { useNavigate } from 'react-router-dom';
 import { UsersRepository } from '../../../infrastructure/services/usersRepo/users.repository';
 
 export function DeleteUser() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     // const { users } = useUsers();
     // const user = users.user;
     const serviceUser = new UsersRepository();
 
-    // const logout = () => {
-    //     localStorage.removeItem('token');
-    //     // navigate('/home');
-    // };
+    const logout = () => {
+        localStorage.removeItem('token');
+        navigate('/home');
+    };
+
     const handleRemoveUser = () => {
         serviceUser.deleteUser();
         localStorage.removeItem('token');
-        // navigate('/home');
+        navigate('/home');
     };
 
     return (
@@ -39,6 +41,9 @@ export function DeleteUser() {
                     required
                 />
             </div> */}
+            <button className="logOutUserButton" type="submit" onClick={logout}>
+                Log Out
+            </button>
             <button
                 className="deleteUserButton"
                 type="submit"

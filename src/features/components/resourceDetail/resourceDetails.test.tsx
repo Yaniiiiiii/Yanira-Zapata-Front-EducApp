@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { useResources } from '../../../infrastructure/hooks/useResources';
+import { useUsers } from '../../../infrastructure/hooks/useUsers';
 import { appStore } from '../../../store/store';
 import ResourceDetails from './resourceDetail';
 
@@ -41,52 +42,27 @@ describe('Given ResourceDetails page', () => {
             );
         });
 
-        test('then the typed text in second input should be on the screen', () => {
-            const mockTyped = 'test';
-
-            const input = screen.getByRole(formElements[0].role, {
-                name: formElements[0].name,
-            });
-
-            userEvent.type(input, mockTyped);
-
-            expect(input).toHaveValue(mockTyped);
-        });
-
-        // test('Then it should display the word "name"', () => {
-        //     const title = /name/i;
-        //     const element = screen.(title);
-        //     expect(element).toBeInTheDocument();
-        // });
-
-        test('Then it should display the word "gender"', () => {
-            const title = /subject/i;
-            const element = screen.getAllByRole(title);
+        test('Then it should display the word "listItem"', () => {
+            const element = screen.getByRole('listitem');
             expect(element).toBeInTheDocument();
         });
 
-        test('Then it should display the word "format"', () => {
-            const title = /format/i;
-            const element = screen.getByText(title);
+        test('Then it should display the  "heading" role', () => {
+            const element = screen.getByRole('heading');
             expect(element).toBeInTheDocument();
         });
 
-        test('Then it should display the word "price"', () => {
-            const title = /price/i;
-            const element = screen.getByText(title);
-            expect(element).toBeInTheDocument();
+        test('Then it should click the "add favorites button"', () => {
+            const element = screen.getAllByRole('button');
+            userEvent.click(element[0]);
         });
-
-        test('then it should display a target with alt attribute', () => {
-            const element = screen.getByAltText(/cover/i);
-            expect(element).toBeInTheDocument();
+        test('Then it should click the "delete favorites button"', () => {
+            const element = screen.getAllByRole('button');
+            userEvent.click(element[1]);
         });
-
-        test('the handleAdd from the custom hook should be called', () => {
-            const button = screen.getByRole(formElements[7].role);
-            userEvent.click(button);
-            const result = useResources().handleAdd;
-            expect(result).toHaveBeenCalled();
+        test('Then it should click the "edit favorites button"', () => {
+            const element = screen.getAllByRole('button');
+            userEvent.click(element[2]);
         });
     });
 });

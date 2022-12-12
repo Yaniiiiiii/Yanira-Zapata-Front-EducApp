@@ -16,8 +16,6 @@ export function UserLogin() {
     const handleSubmit = (ev: SyntheticEvent) => {
         ev.preventDefault();
         handleLogin(login);
-        //localStorage.setItem('token', users.token);
-        console.log(users);
         setLogin(formInitialState);
     };
 
