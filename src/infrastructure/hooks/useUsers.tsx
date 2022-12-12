@@ -5,12 +5,13 @@ import { ProtoUser, User } from '../services/types/users.types';
 import { Resource } from '../services/types/resources.types';
 import { useSelector } from 'react-redux';
 import { rootState } from '../../store/store';
+import { useNavigate } from 'react-router-dom';
 
 export const useUsers = () => {
     const users = useSelector((state: rootState) => state.users);
     const dispatcher = useDispatch();
     const apiUsers = new UsersRepository();
-
+    const navigate = useNavigate();
     const handleRegister = (user: Partial<User>) => {
         apiUsers
             .register(user)
@@ -21,7 +22,6 @@ export const useUsers = () => {
         apiUsers
             .logIn(user)
             .then((res) => {
-                console.log(res, 'login');
                 return dispatcher(ac.loginActionCreatorUsers(res));
             })
             .catch((error: Error) => console.log(error.name, error.message));
@@ -46,7 +46,11 @@ export const useUsers = () => {
     const handleDeleteUser = () => {
         apiUsers
             .deleteUser()
-            .then(() => dispatcher(ac.logoutActionCreatorUsers()))
+            .then(() => {
+                dispatcher(ac.logoutActionCreatorUsers());
+                localStorage.removeItem('token');
+                navigate('/home');
+            })
             .catch((error: Error) => console.log(error.name, error.message));
     };
 

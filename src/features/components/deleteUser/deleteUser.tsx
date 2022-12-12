@@ -1,21 +1,19 @@
-import { useNavigate } from 'react-router-dom';
-import { UsersRepository } from '../../../infrastructure/services/usersRepo/users.repository';
+import { useDispatch } from 'react-redux';
+
+import { useUsers } from '../../../infrastructure/hooks/useUsers';
+import { logoutActionCreatorUsers } from '../../../infrastructure/reducer/actionCreator';
 
 export function DeleteUser() {
-    const navigate = useNavigate();
-    // const { users } = useUsers();
-    // const user = users.user;
-    const serviceUser = new UsersRepository();
+    const { handleDeleteUser } = useUsers();
+    const dispatcher = useDispatch();
 
     const logout = () => {
+        dispatcher(logoutActionCreatorUsers());
         localStorage.removeItem('token');
-        navigate('/home');
     };
 
     const handleRemoveUser = () => {
-        serviceUser.deleteUser();
-        localStorage.removeItem('token');
-        navigate('/home');
+        handleDeleteUser();
     };
 
     return (

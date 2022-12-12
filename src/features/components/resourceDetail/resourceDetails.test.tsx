@@ -3,7 +3,6 @@ import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { useResources } from '../../../infrastructure/hooks/useResources';
-import { useUsers } from '../../../infrastructure/hooks/useUsers';
 import { appStore } from '../../../store/store';
 import ResourceDetails from './resourceDetail';
 
