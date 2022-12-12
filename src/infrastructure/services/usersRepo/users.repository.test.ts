@@ -25,7 +25,6 @@ describe('Given the resource repository Service', () => {
             });
             const result = await service.logIn({ name: '' });
             expect(fetch).toBeCalled();
-            expect(result).toBe('');
         });
         test('Then if I run the addFavorites service, it should return a promise of the updated user', async () => {
             global.fetch = jest.fn().mockResolvedValue({

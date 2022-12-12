@@ -4,7 +4,7 @@ export class UsersRepository {
     url: string;
 
     constructor() {
-        this.url = 'http://localhost:7700/users';
+        this.url = 'http://localhost:3300/users';
     }
 
     createError(response: Response) {

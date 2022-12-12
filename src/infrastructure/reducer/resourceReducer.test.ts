@@ -1,4 +1,4 @@
-import { mockResource } from '../../mocks/mocks';
+import { mockResource, mockResources } from '../../mocks/mocks';
 import { Resource } from '../services/types/resources.types';
 import { actionTypesResources } from './actionTypes';
 import { resourceReducer } from './resourceReducer';
@@ -83,6 +83,19 @@ describe('Given the function resourceReducer', () => {
         test('Then it should return the state <mockResource>', () => {
             const result = resourceReducer(state, action);
             expect(result).toEqual(state);
+        });
+    });
+    describe('When the action is search by key and value', () => {
+        beforeEach(() => {
+            action = {
+                type: actionTypesResources.loadSearch,
+                payload: mockResources,
+            };
+            state = [];
+        });
+        test('Then the returned state should be the action payload', () => {
+            const result = resourceReducer(state, action);
+            expect(result).toBe(mockResources);
         });
     });
 });

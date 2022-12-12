@@ -20,6 +20,7 @@ export const useUsers = () => {
         apiUsers
             .logIn(user)
             .then((res) => {
+                console.log(res, 'login');
                 return dispatcher(ac.loginActionCreatorUsers(res));
             })
             .catch((error: Error) => console.log(error.name, error.message));

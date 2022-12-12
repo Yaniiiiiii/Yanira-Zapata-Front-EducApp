@@ -1,2 +1,18 @@
 .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.headerabout {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
 }

@@ -27,6 +27,7 @@ export const loginActionCreatorUsers = createAction<{
     user: User;
     token: string;
 }>(actionTypesUsers.login);
+
 export const logoutActionCreatorUsers = createAction<void>(
     actionTypesUsers.logout
 );
