@@ -38,84 +38,70 @@ export function AddResource() {
     return (
         <>
             <Header></Header>
-            <section>
-                <h2 className={styles.Createtitle}>{title}</h2>
-
+            <h2 className={styles.Createtitle}>{title}</h2>
+            <section className={styles.section}>
                 <form className={styles.addform} onSubmit={handleSubmit}>
-                    <div className={styles.addtitle}>
-                        {' '}
-                        <input
-                            type="text"
-                            name="title"
-                            placeholder="Title"
-                            value={addResource.title}
-                            onInput={handleInput}
-                            aria-label="title"
-                            required
-                        ></input>
-                    </div>
-                    <div className={styles.addsubject}>
-                        {' '}
-                        <input
-                            type="text"
-                            name="subject"
-                            placeholder="Subject"
-                            value={addResource.subject}
-                            onInput={handleInput}
-                            aria-label="subject"
-                            required
-                        ></input>
-                    </div>
-                    <div className={styles.addgrade}>
-                        {' '}
-                        <input
-                            type="text"
-                            name="grade"
-                            placeholder="Grade"
-                            value={addResource.grade}
-                            onInput={handleInput}
-                            aria-label="grade"
-                            required
-                        ></input>
-                    </div>
-                    <div className={styles.addpages}>
-                        {' '}
-                        <input
-                            type="text"
-                            name="description"
-                            placeholder="description"
-                            value={addResource.description}
-                            onInput={handleInput}
-                            aria-label="description"
-                            required
-                        ></input>
-                    </div>
-                    <div className={styles.addpages}>
-                        {' '}
-                        <input
-                            type="text"
-                            name="pages"
-                            placeholder="Pages"
-                            value={addResource.pages}
-                            onInput={handleInput}
-                            aria-label="pages"
-                            required
-                        ></input>
-                    </div>
-
-                    <div className={styles.addfile}>
-                        <label htmlFor="file">Upload your resource</label>
-                        <input
-                            type="file"
-                            name="file"
-                            id="file"
-                            accept="image/png, image/jpeg"
-                            value={addResource.format}
-                            onChange={handleInput}
-                            aria-label="file"
-                        ></input>
-                    </div>
-
+                    {' '}
+                    <input
+                        className={styles.addResource__input}
+                        type="text"
+                        name="title"
+                        placeholder="Title"
+                        value={addResource.title}
+                        onInput={handleInput}
+                        aria-label="title"
+                        required
+                    ></input>
+                    <input
+                        className={styles.addResource__input}
+                        type="text"
+                        name="subject"
+                        placeholder="Subject"
+                        value={addResource.subject}
+                        onInput={handleInput}
+                        aria-label="subject"
+                        required
+                    ></input>{' '}
+                    <input
+                        className={styles.addResource__input}
+                        type="text"
+                        name="grade"
+                        placeholder="Grade"
+                        value={addResource.grade}
+                        onInput={handleInput}
+                        aria-label="grade"
+                        required
+                    ></input>{' '}
+                    <input
+                        className={styles.addResource__input}
+                        type="text"
+                        name="description"
+                        placeholder="description"
+                        value={addResource.description}
+                        onInput={handleInput}
+                        aria-label="description"
+                        required
+                    ></input>{' '}
+                    <input
+                        className={styles.addResource__input}
+                        type="text"
+                        name="pages"
+                        placeholder="Pages"
+                        value={addResource.pages}
+                        onInput={handleInput}
+                        aria-label="pages"
+                        required
+                    ></input>
+                    <input
+                        className={styles.addResource__input}
+                        type="file"
+                        name="file"
+                        id="file"
+                        accept="image/png, image/jpeg"
+                        value={addResource.format}
+                        onChange={handleInput}
+                        aria-label="file"
+                    ></input>
                     <button className={styles.addResourceButton} type="submit">
                         Create Resource
                     </button>
