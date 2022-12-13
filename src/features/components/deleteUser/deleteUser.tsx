@@ -22,29 +22,7 @@ export function DeleteUser() {
 
     return (
         <section className={styles.delete_account}>
-            <h2 className={styles.delete_h2}>
-                Please introduce your credentials to delete your account
-            </h2>
-            {/* <div className="form__name">
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={}
-                    onInput={handleInput}
-                    required
-                />
-            </div>
-            <div className="form__password">
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={deleteUser.password}
-                    onInput={handleInput}
-                    required
-                />
-            </div> */}
+            <h2 className={styles.delete_h2}>What do you want to do?</h2>
             <button
                 className={styles.logOutUserButton}
                 type="submit"
@@ -60,7 +38,7 @@ export function DeleteUser() {
                 Delete account
             </button>
             <div className={styles.deleteUser__logo}>
-                <Link to="">
+                <Link to="/">
                     <img src={'/assets/logo.jpg'} width="150px" alt="logo" />
                 </Link>
             </div>

@@ -1,0 +1,12 @@
+.sectionWorkingOnIt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+.WorkingOnIt {
+    gap: 10px;
+    color: rgba(12, 69, 28, 1);
+    font-size: 24px;
+}
