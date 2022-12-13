@@ -14,6 +14,7 @@ describe('Given ResourceDetails page', () => {
     describe('When we render the component', () => {
         let service: ResourceRepository;
         let formElements: Array<{ role: string; name: string }>;
+
         beforeEach(() => {
             formElements = [
                 { role: 'textbox', name: 'title' },
@@ -24,6 +25,11 @@ describe('Given ResourceDetails page', () => {
                 { role: 'file', name: 'file' },
                 { role: 'button', name: 'Create Resource' },
             ];
+
+            ResourceRepository.prototype.get = jest
+                .fn()
+                .mockResolvedValue(mockResource);
+
             (useResources as jest.Mock).mockReturnValue({
                 handleLike: jest.fn(),
             });
@@ -67,15 +73,9 @@ describe('Given ResourceDetails page', () => {
             userEvent.click(element[2]);
         });
         test('Then if I run the getResourceById function, it should return the resource', async () => {
-            service = new ResourceRepository();
+            const element = screen.getByText(/puzzle/i);
 
-            global.fetch = jest.fn().mockResolvedValue({
-                ok: true,
-
-                json: jest.fn().mockResolvedValue({ resource: mockResource }),
-            });
-            await service.get('');
-            expect(fetch).toBeCalled();
+            expect(element).toBeInTheDocument();
         });
     });
 });

@@ -16,7 +16,7 @@ export function AboutUsPage() {
             </p>
             <div className={styles.header__logo}>
                 <Link to="/resources">
-                    <img src={'./assets/logo.jpg'} width="150px" alt="logo" />
+                    <img src={'/assets/logo.jpg'} width="150px" alt="logo" />
                 </Link>
             </div>
         </section>

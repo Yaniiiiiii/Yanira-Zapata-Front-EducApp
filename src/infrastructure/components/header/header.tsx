@@ -6,7 +6,7 @@ export function Header() {
         <header className={styles.header}>
             <div className={styles.header__logo}>
                 <Link to="/resources">
-                    <img src={'./assets/logo.jpg'} width="92px" alt="logo" />
+                    <img src={'/assets/logo.jpg'} width="92px" alt="logo" />
                 </Link>
             </div>
             <div className={styles.header__right}>
@@ -16,8 +16,8 @@ export function Header() {
                     </Link>
                 </div>
                 <div>
-                    <Link to="*">
-                        <img src={'./assets/cart.png'} alt="cart" />
+                    <Link to="/inprogress">
+                        <img src={'/assets/cart.png'} alt="cart" />
                     </Link>
                 </div>
             </div>

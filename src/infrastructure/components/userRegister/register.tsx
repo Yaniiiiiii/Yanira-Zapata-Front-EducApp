@@ -33,7 +33,7 @@ export function RegisterForm() {
         ev.preventDefault();
         UserRepo.register(formState);
         setFormState(initialState);
-        navigate('/login');
+        navigate('/');
     };
 
     return (
@@ -97,8 +97,7 @@ export function RegisterForm() {
                 </form>
                 <p>or</p>
                 <p>
-                    Do you already have an account?{' '}
-                    <Link to="/login">Login</Link>
+                    Do you already have an account? <Link to="/">Login</Link>
                 </p>
             </section>
         </>

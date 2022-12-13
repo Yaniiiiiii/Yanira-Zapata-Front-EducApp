@@ -8,7 +8,7 @@ export function WorkingOnIt() {
             <Link to="/resources">
                 <div>
                     <p>{message}</p>
-                    <img src="./assets/logo.jpg" width={'379px'} alt="logo2" />
+                    <img src="/assets/logo.jpg" width={'350px'} alt="logo2" />
                     <p>{apologize}</p>
                 </div>
             </Link>

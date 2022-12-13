@@ -13,12 +13,11 @@ export function DeleteUser() {
     const logout = () => {
         dispatcher(logoutActionCreatorUsers());
         localStorage.removeItem('token');
-        navigate('/login');
+        navigate('/');
     };
 
     const handleRemoveUser = () => {
         handleDeleteUser();
-        navigate('/login');
     };
 
     return (
@@ -61,8 +60,8 @@ export function DeleteUser() {
                 Delete account
             </button>
             <div className={styles.deleteUser__logo}>
-                <Link to="/login">
-                    <img src={'./assets/logo.jpg'} width="150px" alt="logo" />
+                <Link to="">
+                    <img src={'/assets/logo.jpg'} width="150px" alt="logo" />
                 </Link>
             </div>
         </section>

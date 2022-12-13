@@ -27,19 +27,23 @@ jest.mock('../features/pages/favPage/favPage', () => {
 jest.mock('../features/components/aboutUs/aboutUs', () => {
     return () => <div>Test about</div>;
 });
+jest.mock('../features/pages/clientInfo/working', () => {
+    return () => <div>Test progress</div>;
+});
 
 describe('Given AppRoutes component', () => {
     let paths: Array<string>;
 
     beforeEach(() => {
         paths = [
-            '/login',
+            '/',
             '/register',
-            '/12345',
+            '/resources/1234567',
             '/addResource',
             '/favoritePage',
             '/aboutUs',
             '/resources',
+            '/inprogress',
         ];
     });
 
@@ -122,6 +126,17 @@ describe('Given AppRoutes component', () => {
                 </Router>
             );
             const element = await screen.findByText('Test List');
+            expect(element).toBeInTheDocument();
+        });
+    });
+    describe('when we render the component and the route is workin in progress', () => {
+        test('then it should display the resourceslist', async () => {
+            render(
+                <Router initialEntries={paths} initialIndex={7}>
+                    <AppRoutes></AppRoutes>
+                </Router>
+            );
+            const element = await screen.findByText('Test progress');
             expect(element).toBeInTheDocument();
         });
     });

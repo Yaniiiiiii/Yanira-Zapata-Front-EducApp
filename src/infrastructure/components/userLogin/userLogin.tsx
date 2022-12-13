@@ -29,7 +29,6 @@ export function UserLogin() {
                 <h2 className={style.h2__login}>{title}</h2>
                 <form onSubmit={handleSubmit}>
                     <div className={style.form__inputs}>
-                        {' '}
                         <input
                             className={style.form__input}
                             type="email"
@@ -62,7 +61,7 @@ export function UserLogin() {
                 </p>
             </div>
             <div className={style.img}>
-                <img src={'./assets/logo.jpg'} width="120px" alt="logo" />
+                <img src={'/assets/logo.jpg'} width="120px" alt="logo" />
             </div>
         </section>
     );

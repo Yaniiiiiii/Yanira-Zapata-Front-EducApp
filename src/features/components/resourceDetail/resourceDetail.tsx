@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Footer from '../../../infrastructure/components/footer/footer';
 import { Header } from '../../../infrastructure/components/header/header';
@@ -24,7 +24,7 @@ export function ResourceDetails() {
 
     const { handleAddFavorites, handleDeleteFavorites } = useUsers();
 
-    const repoResource = new ResourceRepository();
+    const repoResource = useMemo(() => new ResourceRepository(), []);
 
     const { handleUpdate } = useResources();
 
