@@ -13,7 +13,7 @@ const ResourcesPage = lazy(
 const Details = lazy(
     () => import('../features/components/resourceDetail/resourceDetail')
 );
-const AddResource = lazy(
+const AddResources = lazy(
     () => import('../features/components/addResource/addResource')
 );
 const FavoritePage = lazy(() => import('../features/pages/favPage/favPage'));
@@ -29,16 +29,16 @@ export function AppRoutes() {
                     path="/register"
                     element={<RegisterPage></RegisterPage>}
                 ></Route>
+                <Route path=":id" element={<Details></Details>}></Route>
                 <Route path="/resources">
                     <Route
                         index
                         element={<ResourcesPage></ResourcesPage>}
                     ></Route>
-                    <Route path=":id" element={<Details></Details>}></Route>
                 </Route>
                 <Route
                     path="/addResource"
-                    element={<AddResource></AddResource>}
+                    element={<AddResources></AddResources>}
                 ></Route>
                 <Route
                     path="/favoritePage"

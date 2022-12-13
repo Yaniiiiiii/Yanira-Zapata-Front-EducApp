@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
-
 import { AppRoutes } from './app.routes';
 
 jest.mock('../infrastructure/components/userLogin/userLogin', () => {
@@ -29,10 +28,6 @@ jest.mock('../features/components/aboutUs/aboutUs', () => {
     return () => <div>Test about</div>;
 });
 
-// jest.mock('../features/pages/clientInfo/working', () => {
-//     return () => <div>Test deleteUser</div>;
-// });
-
 describe('Given AppRoutes component', () => {
     let paths: Array<string>;
 
@@ -40,7 +35,7 @@ describe('Given AppRoutes component', () => {
         paths = [
             '/login',
             '/register',
-            '/id',
+            '/12345',
             '/addResource',
             '/favoritePage',
             '/aboutUs',
@@ -72,8 +67,8 @@ describe('Given AppRoutes component', () => {
         });
     });
 
-    describe('when we render the component and the route is add Resource Page', () => {
-        test.only('then it should display the Login Page', async () => {
+    describe('when we render the component and route is /:id', () => {
+        test('then it should display the resource page', async () => {
             render(
                 <Router initialEntries={paths} initialIndex={2}>
                     <AppRoutes></AppRoutes>
@@ -96,14 +91,14 @@ describe('Given AppRoutes component', () => {
         });
     });
 
-    describe('when we render the component and the route is teh list of resources', () => {
-        test('then it should display the Login Page', async () => {
+    describe('when we render the component and the route is Test about', () => {
+        test('then it should display the Test about Page', async () => {
             render(
-                <Router initialEntries={paths} initialIndex={3}>
+                <Router initialEntries={paths} initialIndex={5}>
                     <AppRoutes></AppRoutes>
                 </Router>
             );
-            const element = await screen.findByText('Test Add');
+            const element = await screen.findByText('Test about');
             expect(element).toBeInTheDocument();
         });
     });
