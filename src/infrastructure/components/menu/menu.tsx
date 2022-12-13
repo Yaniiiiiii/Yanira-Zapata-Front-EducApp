@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 export function Menu() {
     const menuOptions = [
-        { id: '1', path: 'resources', label: 'HomePage' },
+        { id: '1', path: '/resources', label: 'HomePage' },
         { id: '2', path: '/favoritePage', label: 'FavoritesPage' },
-        { id: '3', path: 'AddResource', label: 'AddResourcePage' },
-        { id: '4', path: '/register', label: 'UserPage' },
+        { id: '3', path: '/AddResource', label: 'AddResourcePage' },
+        { id: '4', path: '/deleteAcc', label: 'DeleteUser' },
     ];
     return (
         <nav>

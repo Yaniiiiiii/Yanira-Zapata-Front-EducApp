@@ -1,8 +1,9 @@
 .header {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     margin-top: 40px;
+    margin: 10px 20px;
 }
 
 .headerabout {
@@ -12,7 +13,18 @@
     flex-direction: row;
     align-items: baseline;
 }
-.logo {
+.header__logo {
     display: flex;
     flex-direction: column;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.header__aboutUs {
+    text-decoration: none;
+    color: #0c451c;
 }

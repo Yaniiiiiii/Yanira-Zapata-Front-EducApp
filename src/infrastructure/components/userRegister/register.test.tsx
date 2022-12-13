@@ -7,6 +7,7 @@ import { useUsers } from '../../hooks/useUsers';
 import { resourceReducer } from '../../reducer/resourceReducer';
 import { usersReducer } from '../../reducer/usersReducer';
 import { RegisterForm } from './register';
+import { MemoryRouter as Router } from 'react-router-dom';
 
 jest.mock('../../hooks/useUsers');
 const preloadedState: rootState = {
@@ -26,19 +27,43 @@ const mockStore: rootStore = configureStore({
     preloadedState,
 });
 
+const navigate = jest.mock('react-router-dom', () => ({
+    ...(jest.requireActual('react-router-dom') as any),
+    useNavigate: () => ({
+        navigate: jest.fn().mockImplementation(() => ({})),
+    }),
+}));
+
 describe('Given the user Register  component', () => {
+    let formElm: Array<{ role: string; name: string }>;
     describe('When we submit the form', () => {
+        beforeEach(() => {
+            formElm = [
+                { role: 'textbox', name: '' },
+                { role: 'textbox', name: '' },
+            ];
+            render(
+                <Provider store={mockStore}>
+                    <Router>
+                        {' '}
+                        <RegisterForm />
+                    </Router>
+                </Provider>
+            );
+        });
+        test('the handleinput must be called..', () => {
+            const input = screen.getAllByRole(formElm[0].role, {
+                name: formElm[0].name,
+            });
+            userEvent.type(input[0], 'name');
+            expect(input[0]).toHaveValue('name');
+        });
         test('Then it should render the logIn form', () => {
             (useUsers as jest.Mock).mockReturnValue({
                 users: {},
                 handleLogin: jest.fn(),
+                navigate,
             });
-
-            render(
-                <Provider store={mockStore}>
-                    <RegisterForm />
-                </Provider>
-            );
 
             const input = screen.getByPlaceholderText(
                 /email/i

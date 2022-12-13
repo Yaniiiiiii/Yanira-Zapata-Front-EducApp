@@ -1,4 +1,5 @@
 import { SyntheticEvent, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { UsersRepository } from '../../services/usersRepo/users.repository';
 import styles from './register.module.css';
 
@@ -12,7 +13,7 @@ type formData = {
 
 export function RegisterForm() {
     const UserRepo = new UsersRepository();
-
+    const navigate = useNavigate();
     const initialState: formData = {
         name: '',
         email: '',
@@ -32,6 +33,7 @@ export function RegisterForm() {
         ev.preventDefault();
         UserRepo.register(formState);
         setFormState(initialState);
+        navigate('/login');
     };
 
     return (
@@ -93,6 +95,11 @@ export function RegisterForm() {
                         Create account
                     </button>
                 </form>
+                <p>or</p>
+                <p>
+                    Do you already have an account?{' '}
+                    <Link to="/login">Login</Link>
+                </p>
             </section>
         </>
     );

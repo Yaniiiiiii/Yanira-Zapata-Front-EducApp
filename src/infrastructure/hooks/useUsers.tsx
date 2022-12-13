@@ -49,7 +49,7 @@ export const useUsers = () => {
             .then(() => {
                 dispatcher(ac.logoutActionCreatorUsers());
                 localStorage.removeItem('token');
-                navigate('/home');
+                navigate('/resources');
             })
             .catch((error: Error) => console.log(error.name, error.message));
     };

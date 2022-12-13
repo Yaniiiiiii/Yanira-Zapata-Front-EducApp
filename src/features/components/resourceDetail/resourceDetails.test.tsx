@@ -3,6 +3,8 @@ import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { useResources } from '../../../infrastructure/hooks/useResources';
+import { ResourceRepository } from '../../../infrastructure/services/resourcesRepo/resources.repository';
+import { mockResource } from '../../../mocks/mocks';
 import { appStore } from '../../../store/store';
 import ResourceDetails from './resourceDetail';
 
@@ -10,6 +12,7 @@ jest.mock('../../../infrastructure/hooks/useResources');
 
 describe('Given ResourceDetails page', () => {
     describe('When we render the component', () => {
+        let service: ResourceRepository;
         let formElements: Array<{ role: string; name: string }>;
         beforeEach(() => {
             formElements = [
@@ -42,7 +45,7 @@ describe('Given ResourceDetails page', () => {
         });
 
         test('Then it should display the word "listItem"', () => {
-            const element = screen.getByRole('listitem');
+            const element = screen.getByText('About us');
             expect(element).toBeInTheDocument();
         });
 
@@ -62,6 +65,17 @@ describe('Given ResourceDetails page', () => {
         test('Then it should click the "edit favorites button"', () => {
             const element = screen.getAllByRole('button');
             userEvent.click(element[2]);
+        });
+        test('Then if I run the getResourceById function, it should return the resource', async () => {
+            service = new ResourceRepository();
+
+            global.fetch = jest.fn().mockResolvedValue({
+                ok: true,
+
+                json: jest.fn().mockResolvedValue({ resource: mockResource }),
+            });
+            await service.get('');
+            expect(fetch).toBeCalled();
         });
     });
 });

@@ -1,4 +1,6 @@
-import { useResources } from '../../../infrastructure/hooks/useResources';
+import Footer from '../../../infrastructure/components/footer/footer';
+import { Header } from '../../../infrastructure/components/header/header';
+
 import { useUsers } from '../../../infrastructure/hooks/useUsers';
 import { User } from '../../../infrastructure/services/types/users.types';
 
@@ -9,6 +11,7 @@ export function FavoritePage() {
 
     return (
         <>
+            <Header></Header>
             <main>
                 <h2>{title}</h2>
                 <ul>
@@ -37,6 +40,7 @@ export function FavoritePage() {
                     )}
                 </ul>
             </main>
+            <Footer />
         </>
     );
 }

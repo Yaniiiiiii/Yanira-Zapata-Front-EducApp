@@ -1,6 +1,6 @@
-import { ResourceRepository } from '../../../../src/infrastructure/services/resourcesRepo/resources.repository';
 import { SyntheticEvent, useState } from 'react';
 import { useResources } from '../../../infrastructure/hooks/useResources';
+import styles from './searchBar.module.css';
 
 export function SearchBar() {
     const initialState: { subject: string; grade: string } = {
@@ -30,31 +30,40 @@ export function SearchBar() {
 
     return (
         <>
-            <div>
+            <div className={styles.searchContaier}>
+                <h2>Hello, </h2>
+                <p>Let's find some awesome resources!</p>
                 <form action="" onSubmit={handleSearchResource}>
-                    <input
-                        type="text"
-                        value={formState.subject}
-                        name="grade"
-                        onChange={handleInput}
-                    />
-                    {/* <select name="subject" onChange={handleInput}>
-                        <option value=""></option>
-                        <option value="reading">Reading</option>
-                        <option value="math">Math</option>
-                        <option value="science">Science</option>
-                        <option value="writing">Writing</option>
-                    </select> */}
-                    <button type="submit">SEARCH</button>
+                    <div className={styles.search__inputs}>
+                        <select
+                            name="subject"
+                            value={formState.subject}
+                            onChange={handleInput}
+                            className={styles.search__input}
+                        >
+                            <option value=""></option>
+                            <option value="reading">Reading</option>
+                            <option value="math">Math</option>
+                            <option value="science">Science</option>
+                            <option value="writing">Writing</option>
+                        </select>
+                        <select
+                            name="grade"
+                            value={formState.grade}
+                            onChange={handleInput}
+                            className={styles.search__input}
+                        >
+                            <option value=""></option>
+                            <option value="first">Reading</option>
+                            <option value="second">Math</option>
+                            <option value="third">Science</option>
+                            <option value="forth">Writing</option>
+                        </select>
+                        <button type="submit" className={styles.search__input}>
+                            SEARCH
+                        </button>
+                    </div>
                 </form>
-            </div>
-            <div>
-                <input
-                    type="text"
-                    value={formState.grade}
-                    name="grade"
-                    onChange={handleInput}
-                />
             </div>
         </>
     );

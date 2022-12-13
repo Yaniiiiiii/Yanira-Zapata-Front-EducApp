@@ -18,6 +18,7 @@ describe('Given the custom hook use component', () => {
         handleAdd: (newResource: Resource) => void;
         handleDelete: (id: string) => void;
         handleUpdate: (updateResource: Resource) => void;
+        handleSearch: (key: string, value: string) => void;
     }
 
     let current: Current;
@@ -32,6 +33,9 @@ describe('Given the custom hook use component', () => {
             .mockResolvedValue(mockResource);
         ResourceRepository.prototype.delete = jest.fn().mockResolvedValue({});
         ResourceRepository.prototype.update = jest
+            .fn()
+            .mockResolvedValue(mockResource);
+        ResourceRepository.prototype.query = jest
             .fn()
             .mockResolvedValue(mockResource);
 
@@ -104,5 +108,12 @@ describe('Given the custom hook use component', () => {
         ).mockRejectedValueOnce(new Error());
         current.handleDelete('1');
         expect(ResourceRepository.prototype.delete).toHaveBeenCalled();
+    });
+    test('Then when there is an error in handleDSearch it should call the catch method', () => {
+        (
+            ResourceRepository.prototype.delete as jest.Mock
+        ).mockRejectedValueOnce(new Error());
+        current.handleSearch('', '');
+        expect(ResourceRepository.prototype.query).toHaveBeenCalled();
     });
 });

@@ -1,0 +1,14 @@
+.resourceUl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+h2 {
+    color: rgba(12, 69, 28, 1);
+    font-size: 24;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
