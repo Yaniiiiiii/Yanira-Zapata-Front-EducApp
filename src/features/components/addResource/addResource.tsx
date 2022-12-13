@@ -3,6 +3,7 @@ import Footer from '../../../infrastructure/components/footer/footer';
 import { Header } from '../../../infrastructure/components/header/header';
 import { useResources } from '../../../infrastructure/hooks/useResources';
 import { ProtoResource } from '../../../infrastructure/services/types/resources.types';
+import styles from './addResource.module.css';
 
 export function AddResource() {
     const title = "Let's create some content!";
@@ -38,10 +39,10 @@ export function AddResource() {
         <>
             <Header></Header>
             <section>
-                <h2>{title}</h2>
+                <h2 className={styles.Createtitle}>{title}</h2>
 
-                <form onSubmit={handleSubmit}>
-                    <div className="add--title">
+                <form className={styles.addform} onSubmit={handleSubmit}>
+                    <div className={styles.addtitle}>
                         {' '}
                         <input
                             type="text"
@@ -53,7 +54,7 @@ export function AddResource() {
                             required
                         ></input>
                     </div>
-                    <div className="add--subject">
+                    <div className={styles.addsubject}>
                         {' '}
                         <input
                             type="text"
@@ -65,7 +66,7 @@ export function AddResource() {
                             required
                         ></input>
                     </div>
-                    <div className="add--grade">
+                    <div className={styles.addgrade}>
                         {' '}
                         <input
                             type="text"
@@ -77,7 +78,7 @@ export function AddResource() {
                             required
                         ></input>
                     </div>
-                    <div className="add--pages">
+                    <div className={styles.addpages}>
                         {' '}
                         <input
                             type="text"
@@ -89,7 +90,7 @@ export function AddResource() {
                             required
                         ></input>
                     </div>
-                    <div className="add--pages">
+                    <div className={styles.addpages}>
                         {' '}
                         <input
                             type="text"
@@ -102,7 +103,7 @@ export function AddResource() {
                         ></input>
                     </div>
 
-                    <div className="add--file">
+                    <div className={styles.addfile}>
                         <label htmlFor="file">Upload your resource</label>
                         <input
                             type="file"
@@ -115,7 +116,7 @@ export function AddResource() {
                         ></input>
                     </div>
 
-                    <button className="addResourceButton" type="submit">
+                    <button className={styles.addResourceButton} type="submit">
                         Create Resource
                     </button>
                 </form>

@@ -1,0 +1,11 @@
+.addform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Createtitle {
+    display: flex;
+    flex-direction: column;
+    color: rgba(12, 69, 28, 1);
+    font-size: 24px;
+}
