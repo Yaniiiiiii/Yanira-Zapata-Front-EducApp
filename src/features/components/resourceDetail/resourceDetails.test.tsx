@@ -73,7 +73,7 @@ describe('Given ResourceDetails page', () => {
             userEvent.click(element[2]);
         });
         test('Then if I run the getResourceById function, it should return the resource', async () => {
-            const element = screen.getByText(/puzzle/i);
+            const element = screen.getByAltText(/User icon/i);
 
             expect(element).toBeInTheDocument();
         });

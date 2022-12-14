@@ -50,18 +50,5 @@ describe('Given the Header component', () => {
             expect(fireEvent.click(button)).toBe(true);
             expect(element).toBeInTheDocument();
         });
-
-        test.skip('Then it should display the .', () => {
-            render(
-                <Provider store={appStore}>
-                    {' '}
-                    <Router>
-                        <FavoritePage />
-                    </Router>
-                </Provider>
-            );
-            const element = screen.getByRole(/user/i);
-            expect(element).toBeInTheDocument();
-        });
     });
 });

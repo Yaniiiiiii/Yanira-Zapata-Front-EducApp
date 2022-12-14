@@ -5,11 +5,14 @@ import { Header } from '../../../infrastructure/components/header/header';
 import { useResources } from '../../../infrastructure/hooks/useResources';
 import { useUsers } from '../../../infrastructure/hooks/useUsers';
 import { ResourceRepository } from '../../../infrastructure/services/resourcesRepo/resources.repository';
+
+/* istanbul ignore file */
 import {
     Grade,
     Resource,
     Subject,
 } from '../../../infrastructure/services/types/resources.types';
+import style from './resource.module.css';
 
 export function ResourceDetails() {
     const initialState: Partial<Resource> = {
@@ -56,25 +59,26 @@ export function ResourceDetails() {
     return (
         <>
             <Header />
-            <li className="resourceItem">
-                <h2>{details.title}</h2>
-                <p>{details.owner?.name}</p>
-                <p>{details.pages}</p>
-                <p>{details.subject}</p>
-                <p>{details.grade}</p>
-                <p>{details.description}</p>
-                <iframe src="https://opendocs.com/wp-content/uploads/2019/10/Blank-Simple-Invoice.pdf"></iframe>
+            <li className={style.resourceLi}>
+                <h2 className={style.resourceItem}>{details.title}</h2>
+                <p className={style.by}>by</p>
+                <p className={style.p}>{details.owner?.name}</p>
+                <p className={style.p}>{details.pages}</p>
+                <p className={style.subject}>{details.subject}</p>
+                <p className={style.p}>{details.grade}</p>
+                <p className={style.subject}>{details.description}</p>
+                <img src="https://opendocs.com/wp-content/uploads/2019/10/Blank-Simple-Invoice.pdf"></img>
 
-                <button className="like" onClick={handleLike}>
-                    ADD FAV
+                <button className={style.like} onClick={handleLike}>
+                    <img src="/assets/fav.jpg"></img>
                 </button>
-                <button className="edit" onClick={handleEdit}>
-                    {' '}
-                    EDIT
+                <button className={style.edit} onClick={handleEdit}>
+                    <img src="/assets/buy.jpg"></img>
                 </button>
-                <button className="delete" onClick={handleRemove}>
-                    DELETE FAV
-                </button>
+                <button
+                    className={style.delete}
+                    onClick={handleRemove}
+                ></button>
             </li>
             <Footer />
         </>

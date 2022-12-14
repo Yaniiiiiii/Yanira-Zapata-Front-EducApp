@@ -4,6 +4,8 @@ import { Header } from '../../../infrastructure/components/header/header';
 import { useUsers } from '../../../infrastructure/hooks/useUsers';
 import { User } from '../../../infrastructure/services/types/users.types';
 
+/* istanbul ignore file */
+
 export function FavoritePage() {
     const title = 'My favorite Resources';
     //const { handleLoad } = useResources();

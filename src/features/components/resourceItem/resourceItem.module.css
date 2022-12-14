@@ -2,8 +2,7 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    max-width: 153px;
-    max-height: 153px;
+
     flex-direction: row;
 }
 

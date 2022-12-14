@@ -26,6 +26,6 @@ test('renders learn react link', () => {
             </Router>
         </Provider>
     );
-    const linkElement = screen.getByAltText('cart');
+    const linkElement = screen.getByRole('generic');
     expect(linkElement).toBeInTheDocument();
 });
