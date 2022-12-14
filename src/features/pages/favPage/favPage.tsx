@@ -9,7 +9,6 @@ import style from './favPage.module.css';
 /* istanbul ignore file */
 
 export function FavoritePage() {
-    const { handleLoad } = useResources();
     const { users, handleDeleteFavorites } = useUsers();
 
     return (
