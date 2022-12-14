@@ -1,0 +1,35 @@
+.style.resourceLi {
+    margin-left: 200px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.by {
+    display: flex;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    justify-content: center;
+    border-radius: 20px;
+    color: rgba(12, 69, 28, 1);
+}
+.p {
+    display: flex;
+    margin-block: 5px;
+    justify-content: center;
+}
+.subject {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.resourceItem {
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    color: rgba(12, 69, 28, 1);
+    padding: 10px;
+    list-style: none;
+}
+
+.delete {
+}

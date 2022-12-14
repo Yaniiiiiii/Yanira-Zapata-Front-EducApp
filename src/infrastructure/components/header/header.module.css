@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin: 10px 20px;
+}
+
+.headerabout {
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.header__logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.header__aboutUs {
+    text-decoration: none;
+    color: #0c451c;
+}

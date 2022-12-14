@@ -5,9 +5,9 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
-        "test:all": "react-scripts test --watchAll --collect-coverage",
-        "test:prod": "react-scripts test --watchAll --collect-coverage --watchAll=false --passWithNoTests",
+        "test": "react-scripts test --coverage",
+        "test:all": "react-scripts test --watchAll --collect--coverage",
+        "test:prod": "react-scripts test --watchAll --collect--coverage --watchAll=false --passWithNoTests",
         "eject": "react-scripts eject",
         "lint": "eslint ."
     },
@@ -21,6 +21,7 @@
         "@types/node": "^16.18.0",
         "@types/react": "^18.0.23",
         "@types/react-dom": "^18.0.7",
+        "@types/react-redux": "^7.1.24",
         "@typescript-eslint/eslint-plugin": "^5.41.0",
         "@typescript-eslint/parser": "^5.41.0",
         "eslint-config-prettier": "^8.5.0",
@@ -58,7 +59,8 @@
         "coveragePathIgnorePatterns": [
             "<rootDir>/src/reportWebVitals.ts",
             "<rootDir>/src/index.ts",
-            "<rootDir>/src/tools/debug.ts"
+            "<rootDir>/src/tools/debug.ts",
+            "<rootDir>/src/features/components/searchBar/searchBar.tsx"
         ]
     },
     "browserslist": {

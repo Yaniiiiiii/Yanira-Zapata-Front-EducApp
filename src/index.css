@@ -1,6 +1,8 @@
 * {
     box-sizing: border-box;
+    outline: none;
 }
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -11,4 +13,9 @@ body {
 main {
     min-height: 70vh;
     padding: 1rem;
+}
+
+input {
+    display: inline;
+    border: none;
 }
