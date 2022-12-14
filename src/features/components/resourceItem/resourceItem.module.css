@@ -1,17 +1,27 @@
 .resource {
-    list-style: none;
+    width: auto;
+    height: auto;
+
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
 }
 
-.divFormat {
-    width: 200px;
+.titleContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-/* Then style the iframe to fit in the container div with full height and width */
-.iframe {
-    width: 100%;
-    height: 100%;
+.titleContainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.itemSubject {
+    color: rgba(12, 69, 28, 1);
+}
+.itemGrade {
+    color: rgba(96, 187, 99, 1);
 }

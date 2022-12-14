@@ -14,25 +14,23 @@ export function SearchBar() {
         setFormState({ ...formState, [element.name]: element.value });
     };
 
-    const { handleSearch, handleLoad } = useResources();
+    const { handleSearch } = useResources();
 
     const handleSearchResource = (ev: SyntheticEvent) => {
         ev.preventDefault();
-        // if (formState.subject === '') handleLoad();
         handleSearch(formState.grade, formState.subject);
     };
-
-    // const handleChange = (ev: SyntheticEvent) => {
-    //     ev.preventDefault();
-    //     const element = ev.target as HTMLFormElement;
-    //     setFormState({ ...formState, [element.name]: element.value });
-    // };
 
     return (
         <>
             <div className={styles.searchContaier}>
-                <h2>Hello, </h2>
-                <p>Let's find some awesome resources!</p>
+                <div className={styles.searchbarTitle}>
+                    <h2 className={styles.pSearchBar}>Hello, </h2>
+                    <p className={styles.pSearchBarSub}>
+                        Let's find some awesome resources!
+                    </p>
+                </div>
+
                 <form action="" onSubmit={handleSearchResource}>
                     <div className={styles.search__inputs}>
                         <select

@@ -6,16 +6,17 @@ export function ResourceItem({ item }: { item: Resource }) {
     return (
         <li className={style.resource}>
             <Link to={'/resources/' + item.id} key={item.id}>
-                <div className={style.divFormat}>
-                    {' '}
-                    <img width="150" src="/assets/logo.jpg"></img>
-                </div>
+                <img
+                    className={style.imgList}
+                    width="150px"
+                    src="/assets/logo.jpg"
+                ></img>
+                <div className={style.divFormat}></div>
             </Link>
-            <div>
-                <p>{item.subject}</p>
-            </div>
-            <div>
-                <p>{item.grade}</p>
+            <div className={style.titleContainer}>
+                <p className={style.itemSubject}>{item.subject}</p>
+
+                <p className={style.itemGrade}>- {item.grade}</p>
             </div>
         </li>
     );

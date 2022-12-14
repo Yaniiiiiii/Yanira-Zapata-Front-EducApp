@@ -1,0 +1,46 @@
+.favMain {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+}
+.favTitle {
+    color: rgba(12, 69, 28, 1);
+    font-size: 24;
+    font-weight: bold;
+    text-align: center;
+}
+.favul {
+    margin-right: 20px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.buttonDelete {
+    background-color: transparent;
+    border: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+.cardTitle {
+    justify-content: space-evenly;
+    display: flex;
+    gap: 10px;
+
+    color: rgba(12, 69, 28, 1);
+}
+.gradeFav {
+    color: rgba(96, 187, 99, 1);
+}

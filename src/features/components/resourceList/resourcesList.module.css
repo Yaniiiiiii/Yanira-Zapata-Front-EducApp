@@ -1,22 +1,33 @@
 .resourceList {
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    display: inline-block;
+    flex-wrap: wrap;
 }
+
+.resourceH2 {
+    color: rgba(12, 69, 28, 1);
+    font-size: 24;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
 .resourceUl {
     list-style-type: none;
-    margin-left: 75px;
-    width: 200px;
     display: flex;
     justify-content: center;
     list-style: none;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-h2 {
-    color: rgba(12, 69, 28, 1);
-    font-size: 24;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
+
+.itemSubject {
+    translate: 30px;
+}
+
+.footerContainer {
+    height: 71px;
 }

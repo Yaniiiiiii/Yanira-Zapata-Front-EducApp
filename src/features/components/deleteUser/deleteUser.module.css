@@ -4,7 +4,7 @@
     color: rgba(57, 131, 60, 1);
     font-size: 30px;
     margin-top: 50px;
-    margin-right: 45px;
+    width: 43%;
 }
 .delete_account {
     display: flex;

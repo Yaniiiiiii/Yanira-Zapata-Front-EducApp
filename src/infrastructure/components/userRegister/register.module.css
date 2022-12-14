@@ -5,6 +5,7 @@
     justify-content: center;
     align-items: center;
     border: 0;
+    margin: 45px 0;
 }
 
 .form__title1 {
@@ -19,7 +20,6 @@
     outline: none;
 }
 .form__title2 {
-    margin-top: -30px;
     margin-bottom: 30px;
     font-family: 'Space Grotesk', sans-serif;
     color: rgba(12, 69, 28, 1);
@@ -32,15 +32,8 @@
     font-family: 'Space Grotesk', sans-serif;
     align-items: center;
     justify-content: flex-end;
-    width: 314px;
-    height: 44px;
+    width: 100%;
     border-bottom-color: black;
-}
-.form__input::placeholder {
-    font-family: 'Space Grotesk', sans-serif;
-    color: rgba(12, 69, 28, 1);
-    font-size: 16px;
-    font-weight: normal;
 }
 
 .form__button {
@@ -55,4 +48,17 @@
     border: solid 1px rgba(202, 224, 157, 1);
     width: 314px;
     height: 44px;
+}
+
+.formSection {
+    display: flex;
+    gap: 19px;
+    flex-direction: column;
+}
+
+.imgRegister {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }

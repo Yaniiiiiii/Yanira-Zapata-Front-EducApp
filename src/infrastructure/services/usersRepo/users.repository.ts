@@ -4,7 +4,7 @@ export class UsersRepository {
     url: string;
 
     constructor() {
-        this.url = 'http://localhost:3300/users';
+        this.url = 'http://localhost:7700/users';
     }
 
     createError(response: Response) {
@@ -60,12 +60,13 @@ export class UsersRepository {
                 'content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
-        })
-            .then((response) => {
-                if (response.ok) return response.json();
-                throw this.createError(response);
-            })
-            .catch((error) => `${error}`);
+        }).then((response) => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw this.createError(response);
+        });
+        // .catch((error) => `${error}`);
     }
 
     deleteFavorites(id: string): Promise<User> {

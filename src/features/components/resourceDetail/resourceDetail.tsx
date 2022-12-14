@@ -77,9 +77,9 @@ export function ResourceDetails() {
                             🛒
                         </button>
                         <img
-                            width="330px"
-                            src="/assets/logo.jpg"
                             className={style.img}
+                            width="330px"
+                            src="/assets/resource.png"
                         ></img>
                     </div>
                     <div className={style.subjectGrade}>

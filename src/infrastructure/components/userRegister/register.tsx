@@ -41,7 +41,7 @@ export function RegisterForm() {
             <section className={styles.form}>
                 <h2 className={styles.form__title1}>Create an account</h2>
                 <h3 className={styles.form__title2}>Let's get started!</h3>
-                <form onSubmit={handleRegister}>
+                <form onSubmit={handleRegister} className={styles.formSection}>
                     <div className={styles.form__input}>
                         <input
                             type="text"
@@ -96,9 +96,11 @@ export function RegisterForm() {
                     </button>
                 </form>
                 <p>or</p>
-                <p>
-                    Do you already have an account? <Link to="/">Login</Link>
-                </p>
+                <p>Do you already have an account?</p>
+                <Link to="/">Login</Link>
+                <div className={styles.imgRegister}>
+                    <img src={'/assets/logo.jpg'} width="120px" alt="logo" />
+                </div>
             </section>
         </>
     );

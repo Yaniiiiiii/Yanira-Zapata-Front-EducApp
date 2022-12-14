@@ -3,10 +3,19 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin-top: 50px;
+    align-items: center;
+    margin-top: 150px;
+    gap: 30px;
 }
 .WorkingOnIt {
     gap: 10px;
     color: rgba(12, 69, 28, 1);
     font-size: 24px;
+}
+
+.pWorkingOnIt {
+    color: rgba(12, 69, 28, 1);
+    font-size: 40px;
+    font-family: cursive;
+    font-weight: bold;
 }

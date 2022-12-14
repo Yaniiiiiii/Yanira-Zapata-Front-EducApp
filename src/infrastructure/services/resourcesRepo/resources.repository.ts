@@ -5,7 +5,7 @@ export class ResourceRepository implements ResourcesRepo<Resource> {
     url: string;
 
     constructor() {
-        this.url = 'http://localhost:3300/resources';
+        this.url = 'http://localhost:7700/resources';
     }
 
     createError(response: Response) {

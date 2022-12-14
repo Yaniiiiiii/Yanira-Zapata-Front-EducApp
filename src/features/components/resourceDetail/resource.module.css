@@ -1,18 +1,12 @@
-.img {
-    z-index: -1;
-}
 .style.resourceLi {
     justify-content: center;
     display: flex;
     align-items: center;
     padding: 5px;
-    background-color: aqua;
 }
 .by {
     display: flex;
     margin-left: 10px;
-    margin-top: -30px;
-    margin-bottom: 20px;
     justify-content: center;
     border-radius: 10px;
     color: rgba(96, 187, 99, 1);
@@ -22,6 +16,7 @@
     margin-left: 5px;
     justify-content: center;
     color: rgba(96, 187, 99, 1);
+    margin-bottom: 10px;
 }
 .subject {
     color: rgba(12, 69, 28, 1);
@@ -31,7 +26,6 @@
     display: flex;
     flex-direction: row;
     margin-top: 50px;
-    margin-left: -20px;
 }
 .resourceItem {
     display: flex;
@@ -55,15 +49,10 @@
 }
 .description {
     color: rgba(12, 69, 28, 1);
-    margin-top: 0px;
-    margin-left: -20px;
-    margin-left: -130px;
 }
 .descriptionTitle {
     color: rgba(12, 69, 28, 1);
     font-weight: bold;
-    margin-top: 0px;
-    margin-left: -180px;
 }
 .like,
 .edit,

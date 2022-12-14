@@ -20,14 +20,16 @@ export function ResourcesList() {
             <Header />
             <SearchBar />
             <section className={style.resourceList}>
-                <h2>{title}</h2>
+                <h2 className={style.resourceH2}>{title}</h2>
                 <ul className={style.resourceUl}>
                     {resources.map((item: Resource) => (
                         <ResourceItem key={item.id} item={item}></ResourceItem>
                     ))}
                 </ul>
             </section>
-            <Footer />
+            <div className={style.footerContainer}>
+                <Footer />
+            </div>
         </>
     ) : (
         <div>Loading...</div>
