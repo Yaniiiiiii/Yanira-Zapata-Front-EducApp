@@ -31,7 +31,6 @@ export const useUsers = () => {
         apiUsers
             .addFavorites(resource.id as string)
             .then((user) => {
-                console.log(user);
                 dispatcher(ac.addFavoritesActionCreatorUsers(user));
             })
             .catch((error: Error) => console.log(error.name, error.message));
