@@ -80,6 +80,7 @@ export function ResourceDetails() {
                             className={style.img}
                             width="330px"
                             src="/assets/resource.png"
+                            alt="details"
                         ></img>
                     </div>
                     <div className={style.subjectGrade}>

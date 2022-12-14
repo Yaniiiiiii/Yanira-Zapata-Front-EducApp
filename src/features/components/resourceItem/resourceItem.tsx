@@ -10,6 +10,7 @@ export function ResourceItem({ item }: { item: Resource }) {
                     className={style.imgList}
                     width="150px"
                     src="/assets/logo.jpg"
+                    alt="item"
                 ></img>
                 <div className={style.divFormat}></div>
             </Link>
