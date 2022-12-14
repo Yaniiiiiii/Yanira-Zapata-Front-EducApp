@@ -1,7 +1,5 @@
 import Footer from '../../../infrastructure/components/footer/footer';
 import { Header } from '../../../infrastructure/components/header/header';
-import { useResources } from '../../../infrastructure/hooks/useResources';
-
 import { useUsers } from '../../../infrastructure/hooks/useUsers';
 import { User } from '../../../infrastructure/services/types/users.types';
 import style from './favPage.module.css';
