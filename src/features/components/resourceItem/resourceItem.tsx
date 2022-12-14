@@ -9,7 +9,7 @@ export function ResourceItem({ item }: { item: Resource }) {
                 <img
                     className={style.imgList}
                     width="150px"
-                    src="/assets/logo.jpg"
+                    src="/assets/resource2.png"
                     alt="item"
                 ></img>
                 <div className={style.divFormat}></div>
