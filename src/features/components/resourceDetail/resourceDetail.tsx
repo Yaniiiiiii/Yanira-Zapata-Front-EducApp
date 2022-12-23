@@ -6,7 +6,6 @@ import { useResources } from '../../../infrastructure/hooks/useResources';
 import { useUsers } from '../../../infrastructure/hooks/useUsers';
 import { ResourceRepository } from '../../../infrastructure/services/resourcesRepo/resources.repository';
 
-/* istanbul ignore file */
 import {
     Grade,
     Resource,

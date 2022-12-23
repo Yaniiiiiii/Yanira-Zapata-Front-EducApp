@@ -7,6 +7,7 @@ export function SearchBar() {
         subject: '',
         grade: '',
     };
+
     const [formState, setFormState] = useState(initialState);
 
     const handleInput = (ev: SyntheticEvent) => {
@@ -14,7 +15,7 @@ export function SearchBar() {
         setFormState({ ...formState, [element.name]: element.value });
     };
 
-    const { handleSearch } = useResources();
+    const { resources, handleSearch } = useResources();
 
     const handleSearchResource = (ev: SyntheticEvent) => {
         ev.preventDefault();
@@ -52,10 +53,10 @@ export function SearchBar() {
                             className={styles.search__input}
                         >
                             <option value=""></option>
-                            <option value="first">Reading</option>
-                            <option value="second">Math</option>
-                            <option value="third">Science</option>
-                            <option value="forth">Writing</option>
+                            <option value="first">First</option>
+                            <option value="second">Second</option>
+                            <option value="third">Third</option>
+                            <option value="forth">Forth</option>
                         </select>
                         <button type="submit" className={styles.search__input}>
                             SEARCH
