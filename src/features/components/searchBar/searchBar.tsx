@@ -3,23 +3,25 @@ import { useResources } from '../../../infrastructure/hooks/useResources';
 import styles from './searchBar.module.css';
 
 export function SearchBar() {
-    const initialState: { subject: string; grade: string } = {
-        subject: '',
-        grade: '',
-    };
+    // const initialState: { subject: string; grade: string } = {
+    //     subject: '',
+    //     grade: '',
+    // };
 
-    const [formState, setFormState] = useState(initialState);
+    const [formState, setFormState] = useState({ subject: '' });
 
     const handleInput = (ev: SyntheticEvent) => {
         const element = ev.target as HTMLFormElement;
-        setFormState({ ...formState, [element.name]: element.value });
+        setFormState({ subject: element.value });
     };
 
-    const { resources, handleSearch } = useResources();
+    const { handleSearch, handleLoad } = useResources();
 
     const handleSearchResource = (ev: SyntheticEvent) => {
         ev.preventDefault();
-        handleSearch(formState.grade, formState.subject);
+        if (formState.subject === '') handleLoad();
+
+        handleSearch(formState.subject);
     };
 
     return (
@@ -36,17 +38,17 @@ export function SearchBar() {
                     <div className={styles.search__inputs}>
                         <select
                             name="subject"
-                            value={formState.subject}
+                            value={'subject/' + formState.subject}
                             onChange={handleInput}
                             className={styles.search__input}
                         >
                             <option value=""></option>
-                            <option value="reading">Reading</option>
-                            <option value="math">Math</option>
-                            <option value="science">Science</option>
-                            <option value="writing">Writing</option>
+                            <option value="reading">reading</option>
+                            <option value="math">math</option>
+                            <option value="science">science</option>
+                            <option value="writing">writing</option>
                         </select>
-                        <select
+                        {/* <select
                             name="grade"
                             value={formState.grade}
                             onChange={handleInput}
@@ -57,7 +59,7 @@ export function SearchBar() {
                             <option value="second">Second</option>
                             <option value="third">Third</option>
                             <option value="forth">Forth</option>
-                        </select>
+                        </select> */}
                         <button type="submit" className={styles.search__input}>
                             SEARCH
                         </button>

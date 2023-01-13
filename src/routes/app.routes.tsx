@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { DeleteUser } from '../features/components/deleteUser/deleteUser';
-import WorkingOnIt from '../features/pages/clientInfo/working';
+import WorkingOnIt from '../features/components/clientInfo/working';
 
 const LoginPage = lazy(
     () => import('../infrastructure/components/userLogin/userLogin')
@@ -18,7 +18,9 @@ const Details = lazy(
 const AddResources = lazy(
     () => import('../features/components/addResource/addResource')
 );
-const FavoritePage = lazy(() => import('../features/pages/favPage/favPage'));
+const FavoritePage = lazy(
+    () => import('../features/components/favPage/favPage')
+);
 
 const AboutUs = lazy(() => import('../features/components/aboutUs/aboutUs'));
 
@@ -49,7 +51,7 @@ export function AppRoutes() {
                 ></Route>
                 <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route>
                 <Route
-                    path="//userAccount"
+                    path="/userAccount"
                     element={<DeleteUser></DeleteUser>}
                 ></Route>
                 <Route

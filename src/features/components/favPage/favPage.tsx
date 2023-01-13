@@ -4,8 +4,6 @@ import { useUsers } from '../../../infrastructure/hooks/useUsers';
 import { User } from '../../../infrastructure/services/types/users.types';
 import style from './favPage.module.css';
 
-/* istanbul ignore file */
-
 export function FavoritePage() {
     const { users, handleDeleteFavorites } = useUsers();
 

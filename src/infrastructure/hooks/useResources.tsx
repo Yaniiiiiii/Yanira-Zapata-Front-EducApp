@@ -49,13 +49,17 @@ export const useResources = () => {
             .catch((error: Error) => console.log(error.name, error.message));
     };
 
-    const handleSearch = useCallback((key: string, value: string) => {
-        apiResource
-            .query(key, value)
-            .then((resources) =>
-                dispatcher(ac.resourceSearchCreatorAction(resources))
-            );
-    }, []);
+    const handleSearch = useCallback(
+        (value: string) => {
+            console.log('value', value);
+            apiResource
+                .query(value)
+                .then((resources) =>
+                    dispatcher(ac.resourceSearchCreatorAction(resources))
+                );
+        },
+        [apiResource, dispatcher]
+    );
 
     return {
         resources,
