@@ -1,7 +1,12 @@
 import { createAction } from '@reduxjs/toolkit';
+import ModalProperties from '../services/types/modals.types';
 import { Resource } from '../services/types/resources.types';
 import { User } from '../services/types/users.types';
-import { actionTypesResources, actionTypesUsers } from './actionTypes';
+import {
+    actionTypesResources,
+    actionTypesUsers,
+    modalActionTypes,
+} from './actionTypes';
 
 export const loadActionCreatorResources = createAction<Array<Resource>>(
     actionTypesResources.load
@@ -36,4 +41,11 @@ export const deleteFavoritesActionCreatorUsers = createAction<User>(
 );
 export const addFavoritesActionCreatorUsers = createAction<User>(
     actionTypesUsers.addFavorites
+);
+
+export const showActionCreatorModals = createAction<ModalProperties>(
+    modalActionTypes.showModal
+);
+export const hideActionCreatorModals = createAction<ModalProperties>(
+    modalActionTypes.hideModal
 );

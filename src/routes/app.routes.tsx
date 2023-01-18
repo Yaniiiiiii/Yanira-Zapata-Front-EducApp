@@ -48,7 +48,9 @@ export function AppRoutes() {
                 <Route
                     path="/favoritePage"
                     element={<FavoritePage></FavoritePage>}
-                ></Route>
+                >
+                    <Route path=":id" element={<Details></Details>}></Route>
+                </Route>
                 <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route>
                 <Route
                     path="/userAccount"

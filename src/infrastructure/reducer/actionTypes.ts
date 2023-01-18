@@ -13,3 +13,8 @@ export const actionTypesUsers = {
     deleteFavorites: 'users@deletefavorites',
     addFavorites: 'users@addfavorites',
 };
+
+export const modalActionTypes = {
+    showModal: 'modal@showmodal',
+    hideModal: 'modal@hidemodal',
+};

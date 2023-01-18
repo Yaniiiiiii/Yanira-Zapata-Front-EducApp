@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Footer from '../../../infrastructure/components/footer/footer';
 import { Header } from '../../../infrastructure/components/header/header';
 import { useUsers } from '../../../infrastructure/hooks/useUsers';
@@ -19,12 +20,18 @@ export function FavoritePage() {
                                 return (
                                     <li key={item.id} className={style.card}>
                                         <div className={style.favPagecontainer}>
-                                            <img
-                                                width="150px"
-                                                src="/assets/resource2.png"
-                                                className={style.imgFav}
-                                                alt="fav"
-                                            ></img>
+                                            {' '}
+                                            <Link
+                                                to={'/resources/' + item.id}
+                                                key={item.id}
+                                            >
+                                                <img
+                                                    width="150px"
+                                                    src="/assets/resource2.png"
+                                                    className={style.imgFav}
+                                                    alt="fav"
+                                                ></img>
+                                            </Link>
                                             <div className={style.container}>
                                                 <div
                                                     className={style.cardTitle}

@@ -9,14 +9,13 @@ export function ResourceItem({ item }: { item: Resource }) {
                 <img
                     className={style.imgList}
                     width="150px"
-                    src="/assets/resource2.png"
+                    src="assets/resource2.png"
                     alt="item"
                 ></img>
                 <div className={style.divFormat}></div>
             </Link>
             <div className={style.titleContainer}>
                 <p className={style.itemSubject}>{item.subject}</p>
-
                 <p className={style.itemGrade}>- {item.grade}</p>
             </div>
         </li>
