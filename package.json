@@ -12,7 +12,7 @@
     },
     "dependencies": {
         "@auth0/auth0-react": "^1.12.0",
-        "@reduxjs/toolkit": "^1.9.0",
+        "@reduxjs/toolkit": "^1.9.1",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
@@ -20,7 +20,6 @@
         "@types/node": "^16.18.0",
         "@types/react": "^18.0.23",
         "@types/react-dom": "^18.0.7",
-        "@types/react-redux": "^7.1.24",
         "@typescript-eslint/eslint-plugin": "^5.41.0",
         "@typescript-eslint/parser": "^5.41.0",
         "eslint-config-prettier": "^8.5.0",
@@ -74,5 +73,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@types/react-redux": "^7.1.25"
     }
 }

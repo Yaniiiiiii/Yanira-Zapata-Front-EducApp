@@ -1,11 +1,11 @@
 import { createReducer } from '@reduxjs/toolkit';
 import * as ac from './actionCreator';
 
-export const initalModalState = {
+export const initialModalState = {
     modal: false,
 };
 
-export const modalsReducer = createReducer(initalModalState, (builder) => {
+export const modalReducer = createReducer(initialModalState, (builder) => {
     builder.addCase(ac.showActionCreatorModals, (state, action) => ({
         ...state,
         modal: true,
@@ -15,3 +15,7 @@ export const modalsReducer = createReducer(initalModalState, (builder) => {
         modal: false,
     }));
 });
+
+// const rootReducer = combineReducers({ modal: modalReducer });
+// export type RootState = ReturnType<typeof rootReducer>;
+// export default rootReducer;

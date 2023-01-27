@@ -51,7 +51,6 @@ export const useResources = () => {
 
     const handleSearch = useCallback(
         (value: string) => {
-            console.log('value', value);
             apiResource
                 .query(value)
                 .then((resources) =>
