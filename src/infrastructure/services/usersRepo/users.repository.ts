@@ -60,13 +60,14 @@ export class UsersRepository {
                 'content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
-        }).then((response) => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw this.createError(response);
-        });
-        // .catch((error) => `${error}`);
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw this.createError(response);
+            })
+            .catch((error) => `${error}`);
     }
 
     deleteFavorites(id: string): Promise<User> {

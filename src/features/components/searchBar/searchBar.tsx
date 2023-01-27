@@ -3,11 +3,6 @@ import { useResources } from '../../../infrastructure/hooks/useResources';
 import styles from './searchBar.module.css';
 
 export function SearchBar() {
-    // const initialState: { subject: string; grade: string } = {
-    //     subject: '',
-    //     grade: '',
-    // };
-
     const [formState, setFormState] = useState({ subject: '' });
 
     const handleInput = (ev: SyntheticEvent) => {
