@@ -30,7 +30,9 @@ export const useUsers = () => {
     const handleAddFavorites = (resource: Partial<Resource>) => {
         apiUsers
             .addFavorites(resource.id as string)
-            .then((user) => dispatcher(ac.addFavoritesActionCreatorUsers(user)))
+            .then((user) => {
+                dispatcher(ac.addFavoritesActionCreatorUsers(user));
+            })
             .catch((error: Error) => console.log(error.name, error.message));
     };
 

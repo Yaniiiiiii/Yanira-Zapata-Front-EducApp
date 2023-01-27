@@ -1,26 +1,31 @@
 .style.resourceLi {
-    margin-left: 200px;
+    justify-content: center;
     display: flex;
     align-items: center;
-    list-style: none;
+    padding: 5px;
 }
 .by {
     display: flex;
-    margin-top: -30px;
-    margin-bottom: 30px;
+    margin-left: 10px;
     justify-content: center;
-    border-radius: 20px;
-    color: rgba(12, 69, 28, 1);
+    border-radius: 10px;
+    color: rgba(96, 187, 99, 1);
 }
 .p {
     display: flex;
-    margin-block: 5px;
+    margin-left: 5px;
     justify-content: center;
+    color: rgba(96, 187, 99, 1);
+    margin-bottom: 10px;
 }
 .subject {
+    color: rgba(12, 69, 28, 1);
+    font-weight: bold;
+}
+.subjectGrade {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    margin-top: 50px;
 }
 .resourceItem {
     display: flex;
@@ -28,8 +33,47 @@
     border-radius: 20px;
     color: rgba(12, 69, 28, 1);
     padding: 10px;
+    margin-left: 10px;
     list-style: none;
 }
 
+.resourceSection {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+.divResource {
+    margin-top: -10px;
+    margin-bottom: -30px;
+    position: relative;
+}
+.description {
+    color: rgba(12, 69, 28, 1);
+}
+.descriptionTitle {
+    color: rgba(12, 69, 28, 1);
+    font-weight: bold;
+}
+.like,
+.edit,
 .delete {
+    background-color: transparent;
+    border: none;
+    color: rgba(12, 69, 28, 1);
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    position: absolute;
+
+    right: 0px;
+}
+.like {
+    top: 0px;
+    bottom: 10px;
+}
+.edit {
+    top: 30px;
+}
+.delete {
+    top: 60px;
 }

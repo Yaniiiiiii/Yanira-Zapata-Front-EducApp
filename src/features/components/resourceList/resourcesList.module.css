@@ -1,27 +1,33 @@
 .resourceList {
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    display: inline-block;
-    vertical-align: middle;
-}
-.resourceUl {
-    list-style-type: none;
-    object-fit: cover;
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
-    list-style: none;
-    align-items: center;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding-inline-start: 0;
 }
-h2 {
+
+.resourceH2 {
     color: rgba(12, 69, 28, 1);
     font-size: 24;
     font-weight: bold;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.resourceUl {
+    list-style-type: none;
     display: flex;
     justify-content: center;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.itemSubject {
+    translate: 30px;
+}
+
+.footerContainer {
+    height: 71px;
 }

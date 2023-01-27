@@ -6,7 +6,6 @@ import { useResources } from '../../../infrastructure/hooks/useResources';
 import { useUsers } from '../../../infrastructure/hooks/useUsers';
 import { ResourceRepository } from '../../../infrastructure/services/resourcesRepo/resources.repository';
 
-/* istanbul ignore file */
 import {
     Grade,
     Resource,
@@ -59,27 +58,40 @@ export function ResourceDetails() {
     return (
         <>
             <Header />
-            <li className={style.resourceLi}>
-                <h2 className={style.resourceItem}>{details.title}</h2>
-                <p className={style.by}>by</p>
-                <p className={style.p}>{details.owner?.name}</p>
-                <p className={style.p}>{details.pages}</p>
-                <p className={style.subject}>{details.subject}</p>
-                <p className={style.p}>{details.grade}</p>
-                <p className={style.subject}>{details.description}</p>
-                <img src="https://opendocs.com/wp-content/uploads/2019/10/Blank-Simple-Invoice.pdf"></img>
+            <section className={style.resourceSection}>
+                <li className={style.resourceLi}>
+                    <h2 className={style.resourceItem}>{details.title}</h2>
+                    <p className={style.by}>by</p>
+                    <p className={style.p}>{details.owner?.name}</p>
 
-                <button className={style.like} onClick={handleLike}>
-                    <img src="/assets/fav.jpg"></img>
-                </button>
-                <button className={style.edit} onClick={handleEdit}>
-                    <img src="/assets/buy.jpg"></img>
-                </button>
-                <button
-                    className={style.delete}
-                    onClick={handleRemove}
-                ></button>
-            </li>
+                    <div className={style.divResource}>
+                        {' '}
+                        <button className={style.like} onClick={handleLike}>
+                            ♡
+                        </button>
+                        <button className={style.edit} onClick={handleEdit}>
+                            ✎
+                        </button>
+                        <button className={style.delete} onClick={handleRemove}>
+                            🛒
+                        </button>
+                        <img
+                            className={style.img}
+                            width="330px"
+                            src="/assets/resource2.png"
+                            alt="details"
+                        ></img>
+                    </div>
+                    <div className={style.subjectGrade}>
+                        {' '}
+                        <p className={style.subject}>{details.subject}</p>
+                        <p className={style.p}>- {details.grade}</p>
+                    </div>
+
+                    <p className={style.descriptionTitle}>Description</p>
+                    <p className={style.description}>{details.description}</p>
+                </li>
+            </section>
             <Footer />
         </>
     );

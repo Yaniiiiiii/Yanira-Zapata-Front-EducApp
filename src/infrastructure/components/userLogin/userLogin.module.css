@@ -4,7 +4,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 35px;
 }
 .login {
     margin-top: 30px;
@@ -46,18 +45,16 @@
     margin-bottom: 10px;
     margin-top: 30px;
     display: flex;
-    margin-right: 50px;
 }
 
 .link_login {
     color: rgba(12, 69, 28, 1);
     display: flex;
-    margin-right: 150px;
-    margin-top: 50px;
+    justify-content: center;
 }
 
 .img {
-    margin-top: 20px;
+    margin-top: 47px;
     display: flex;
     align-items: center;
     justify-content: center;

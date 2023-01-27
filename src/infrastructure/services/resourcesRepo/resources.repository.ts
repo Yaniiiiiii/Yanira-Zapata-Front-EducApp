@@ -5,7 +5,7 @@ export class ResourceRepository implements ResourcesRepo<Resource> {
     url: string;
 
     constructor() {
-        this.url = 'http://localhost:3300/resources';
+        this.url = `${process.env.REACT_APP_URL_REASOURCES}`;
     }
 
     createError(response: Response) {
@@ -39,8 +39,8 @@ export class ResourceRepository implements ResourcesRepo<Resource> {
             .catch((error) => `${error}`);
     }
 
-    query(key: string, value: string): Promise<Array<Resource>> {
-        return fetch(`${this.url}/${key}/${value}`)
+    query(value: string): Promise<Array<Resource>> {
+        return fetch(`${this.url}/subject/${value}`)
             .then((response) => {
                 if (response.ok) return response.json();
                 throw this.createError(response);

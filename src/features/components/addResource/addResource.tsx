@@ -4,6 +4,7 @@ import { Header } from '../../../infrastructure/components/header/header';
 import { useResources } from '../../../infrastructure/hooks/useResources';
 import { ProtoResource } from '../../../infrastructure/services/types/resources.types';
 import styles from './addResource.module.css';
+import { app } from '../../../firebase';
 
 export function AddResource() {
     const title = "Let's create some content!";
@@ -25,11 +26,24 @@ export function AddResource() {
         setAddResource({ ...addResource, [element.name]: element.value });
     };
 
-    const handleSubmit = (ev: SyntheticEvent) => {
+    const [fileUrl, setFileUrl] = useState('');
+    const handleFile = async (ev: any) => {
+        const file = ev.target.files[0];
+        const storageRef = app.storage().ref();
+        const filePath = storageRef.child(file.title);
+        await filePath.put(file);
+        const linkUrl = await filePath.getDownloadURL();
+        setFileUrl(linkUrl);
+    };
+
+    const handleSubmit = async (ev: SyntheticEvent) => {
         ev.preventDefault();
+        const collectionRef = app.firestore().collection('files');
+        await collectionRef.doc().set({ url: fileUrl });
         const newResource: ProtoResource = {
             ...addResource,
             title: addResource.title,
+            format: fileUrl,
         };
         handleAdd(newResource);
         setAddResource(formInitialState);
@@ -48,7 +62,7 @@ export function AddResource() {
                         name="title"
                         placeholder="Title"
                         value={addResource.title}
-                        onInput={handleInput}
+                        onChange={handleInput}
                         aria-label="title"
                         required
                     ></input>
@@ -58,7 +72,7 @@ export function AddResource() {
                         name="subject"
                         placeholder="Subject"
                         value={addResource.subject}
-                        onInput={handleInput}
+                        onChange={handleInput}
                         aria-label="subject"
                         required
                     ></input>{' '}
@@ -68,7 +82,7 @@ export function AddResource() {
                         name="grade"
                         placeholder="Grade"
                         value={addResource.grade}
-                        onInput={handleInput}
+                        onChange={handleInput}
                         aria-label="grade"
                         required
                     ></input>{' '}
@@ -78,7 +92,7 @@ export function AddResource() {
                         name="description"
                         placeholder="description"
                         value={addResource.description}
-                        onInput={handleInput}
+                        onChange={handleInput}
                         aria-label="description"
                         required
                     ></input>{' '}
@@ -88,7 +102,7 @@ export function AddResource() {
                         name="pages"
                         placeholder="Pages"
                         value={addResource.pages}
-                        onInput={handleInput}
+                        onChange={handleInput}
                         aria-label="pages"
                         required
                     ></input>
@@ -99,7 +113,7 @@ export function AddResource() {
                         id="file"
                         accept="image/png, image/jpeg"
                         value={addResource.format}
-                        onChange={handleInput}
+                        onClick={handleInput}
                         aria-label="file"
                     ></input>
                     <button className={styles.addResourceButton} type="submit">

@@ -4,7 +4,7 @@ export class UsersRepository {
     url: string;
 
     constructor() {
-        this.url = 'http://localhost:3300/users';
+        this.url = `${process.env.REACT_APP_URL_USERS}`;
     }
 
     createError(response: Response) {
@@ -62,7 +62,9 @@ export class UsersRepository {
             },
         })
             .then((response) => {
-                if (response.ok) return response.json();
+                if (response.ok) {
+                    return response.json();
+                }
                 throw this.createError(response);
             })
             .catch((error) => `${error}`);

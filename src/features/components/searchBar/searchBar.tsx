@@ -3,62 +3,58 @@ import { useResources } from '../../../infrastructure/hooks/useResources';
 import styles from './searchBar.module.css';
 
 export function SearchBar() {
-    const initialState: { subject: string; grade: string } = {
-        subject: '',
-        grade: '',
-    };
-    const [formState, setFormState] = useState(initialState);
+    const [formState, setFormState] = useState({ subject: '' });
 
     const handleInput = (ev: SyntheticEvent) => {
         const element = ev.target as HTMLFormElement;
-        setFormState({ ...formState, [element.name]: element.value });
+        setFormState({ subject: element.value });
     };
 
     const { handleSearch, handleLoad } = useResources();
 
     const handleSearchResource = (ev: SyntheticEvent) => {
         ev.preventDefault();
-        // if (formState.subject === '') handleLoad();
-        handleSearch(formState.grade, formState.subject);
-    };
+        if (formState.subject === '') handleLoad();
 
-    // const handleChange = (ev: SyntheticEvent) => {
-    //     ev.preventDefault();
-    //     const element = ev.target as HTMLFormElement;
-    //     setFormState({ ...formState, [element.name]: element.value });
-    // };
+        handleSearch(formState.subject);
+    };
 
     return (
         <>
             <div className={styles.searchContaier}>
-                <h2>Hello, </h2>
-                <p>Let's find some awesome resources!</p>
+                <div className={styles.searchbarTitle}>
+                    <h2 className={styles.pSearchBar}>Hello, </h2>
+                    <p className={styles.pSearchBarSub}>
+                        Let's find some awesome resources!
+                    </p>
+                </div>
+
                 <form action="" onSubmit={handleSearchResource}>
                     <div className={styles.search__inputs}>
                         <select
                             name="subject"
-                            value={formState.subject}
+                            value={'subject/' + formState.subject}
                             onChange={handleInput}
                             className={styles.search__input}
                         >
                             <option value=""></option>
-                            <option value="reading">Reading</option>
-                            <option value="math">Math</option>
-                            <option value="science">Science</option>
-                            <option value="writing">Writing</option>
+                            <option value="reading">reading</option>
+                            <option value="math">math</option>
+                            <option value="science">science</option>
+                            <option value="writing">writing</option>
                         </select>
-                        <select
+                        {/* <select
                             name="grade"
                             value={formState.grade}
                             onChange={handleInput}
                             className={styles.search__input}
                         >
                             <option value=""></option>
-                            <option value="first">Reading</option>
-                            <option value="second">Math</option>
-                            <option value="third">Science</option>
-                            <option value="forth">Writing</option>
-                        </select>
+                            <option value="first">First</option>
+                            <option value="second">Second</option>
+                            <option value="third">Third</option>
+                            <option value="forth">Forth</option>
+                        </select> */}
                         <button type="submit" className={styles.search__input}>
                             SEARCH
                         </button>
